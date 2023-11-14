@@ -43,12 +43,12 @@ const Testimonials: React.FC = () => {
                             >
                                 {TESTIMONIALS_DATA.map((testimonial, index) => (
                                     <SwiperSlide key={index}>
-                                        <Card className={'max-w-sm'}>
+                                        <Card key={index} className={'max-w-sm'}>
                                             <p className={'text-gray-600 font-light text-lg text-left'}>
                                                 {testimonial.content}
                                             </p>
                                             <div className={'flex flex-row gap-1 mt-4'}>
-                                                {[...Array(testimonial.rating)].map((e, i) => (
+                                                {[...Array(testimonial.rating)].map(() => (
                                                     <svg
                                                         className="h-5 w-5 text-yellow-300"
                                                         fill="currentColor"
