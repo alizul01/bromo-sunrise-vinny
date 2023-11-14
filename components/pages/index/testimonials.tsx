@@ -7,8 +7,9 @@ import 'swiper/css';
 import { Card } from "flowbite-react";
 import '@/data/testimonials_data';
 import TESTIMONIALS_DATA from "@/data/testimonials_data";
-import StarIcon from '@/public/assets/image/svg/star.svg';
-import Link from "next/link";
+import placeholderImages from '@/public/assets/image/placeholder/img.png';
+
+import Image from "next/image";
 
 const Testimonials: React.FC = () => {
     return (
@@ -47,7 +48,7 @@ const Testimonials: React.FC = () => {
                                                 {testimonial.content}
                                             </p>
                                             <div className={'flex flex-row gap-1 mt-4'}>
-                                                {[...Array(Math.floor(testimonial.rating))].map((e, i) => (
+                                                {[...Array(testimonial.rating)].map((e, i) => (
                                                     <svg
                                                         className="h-5 w-5 text-yellow-300"
                                                         fill="currentColor"
@@ -72,7 +73,7 @@ const Testimonials: React.FC = () => {
                                             </div>
                                             <div className={'flex flex-row gap-1 mt-4'}>
                                                 <div className={'flex flex-row gap-1'}>
-                                                    <img src={testimonial.imageUrl} className={'w-8 h-8 rounded-full'}/>
+                                                    <Image alt={testimonial.name} width={150} height={150} src={placeholderImages} className={'w-8 h-8 rounded-full'}/>
                                                     <div className={'flex flex-col'}>
                                                         <div className={'text-gray-900 font-medium text-sm'}>
                                                             {testimonial.name}
