@@ -17,7 +17,7 @@ const Header: React.FC = () => {
     };
 
     return (
-        <Navbar fluid rounded className={'bg-transparent z-20'}>
+        <Navbar fluid rounded className={'bg-transparent z-20 sticky top-0 bg-white'}>
             <Navbar.Brand href="/">
                 <Image src={logo} alt={'Vinny Bromo Logo Tour'} width={50} height={50}/>
             </Navbar.Brand>
