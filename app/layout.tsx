@@ -2,7 +2,6 @@ import type {Metadata} from 'next'
 import {Inter} from 'next/font/google'
 import './globals.css'
 import Header from "@/components/partials/header";
-import {CustomFlowbiteTheme} from "flowbite-react";
 import React from "react";
 import FooterPartials from "@/components/partials/footer";
 
