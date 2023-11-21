@@ -8,7 +8,6 @@ import {HiPhone} from "react-icons/hi";
 import {usePathname} from "next/navigation";
 
 const Header: React.FC = () => {
-    // Get the current route using useRouter
     const router = usePathname();
     const currentRoute = router.split('/')[1];
 
@@ -17,7 +16,7 @@ const Header: React.FC = () => {
     };
 
     return (
-        <Navbar fluid rounded className={'bg-transparent z-20 sticky top-0 bg-white'}>
+        <Navbar fluid className={'z-20 top-0 bg-transparent'}>
             <Navbar.Brand href="/">
                 <Image src={logo} alt={'Vinny Bromo Logo Tour'} width={50} height={50}/>
             </Navbar.Brand>

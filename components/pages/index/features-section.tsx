@@ -1,16 +1,20 @@
 'use client'
 
 import React from "react";
-import {Button} from "flowbite-react";
-import {HiArrowSmRight} from "react-icons/hi";
+import map_bg from '@/public/assets/image/utils/map.png';
 import CardFeatures from "@/components/component/card-features";
 import {TOUR_DATA} from "@/data/tour_data";
 import Image from "next/image";
 
 const FeaturesSection: React.FC = () => {
     return (
-        <section className={'mt-20 relative'}>
-            <div className={'px-6 xl:px-0 xl:max-w-7xl container mx-auto mt-24'}>
+        <section className={'mt-10 relative'}>
+            <div className={'absolute top-0 left-0 opacity-70 -z-10'}>
+                <span>
+                    <Image src={map_bg} alt={'Map'}/>
+                </span>
+            </div>
+            <div className={'px-6 xl:px-0 xl:max-w-7xl container mx-auto mt-10'}>
                 <div className={'flex flex-col items-center gap-4 py-4 mb-12'}>
                     <div>
                         <h2 className={'text-xl xl:text-2xl font-medium text-gray-900'}>
@@ -24,7 +28,7 @@ const FeaturesSection: React.FC = () => {
                         </p>
                     </div>
                 </div>
-               <div className={'flex flex-row gap-6 items-center justify-center'}>
+               <div className={'flex flex-col lg:flex-row gap-12 items-center justify-center'}>
                    {TOUR_DATA.map((tour, index) => (
                        <CardFeatures key={index} title={tour.title} slug={tour.slug} description={tour.description}
                                      price={tour.privateTour.price} image={tour.image}/>
