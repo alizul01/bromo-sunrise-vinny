@@ -13,12 +13,12 @@ import Image from "next/image";
 
 const Testimonials: React.FC = () => {
     return (
-        <motion.section className={'mt-2'}>
+        <motion.section className={'mt-2 container mx-auto'}>
             <motion.div
                 initial="hidden"
                 animate="visible"
                 transition={{duration: 0.5}}
-                className={"px-6 xl:px-0 xl:max-w-[82rem] container mx-auto"}
+                className={"px-6 xl:px-0 container mx-auto"}
             >
                 <div className={"flex flex-col gap-2 items-center justify-center "}>
                     <div className="py-20">
