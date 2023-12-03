@@ -37,7 +37,7 @@ interface TourData {
 export const TOUR_DATA: TourData[] = [
     {
         slug: 'bromo-tour',
-        image: 'bromo.png',
+        image: 'bromo',
         title: 'Bromo Tour',
         description: 'Explore the breathtaking Bromo Tengger Semeru National Park with our Bromo Tour. We offer both group and private tours to Bromo.',
         groupTour: {
@@ -85,7 +85,7 @@ export const TOUR_DATA: TourData[] = [
     },
     {
         slug: 'tumpaksewu-tour',
-        image: 'tumpaksewu.png',
+        image: 'tumpaksewu',
         title: 'Tumpaksewu Tour',
         description: 'Discover the beauty of Tumpaksewu Waterfalls with our Tumpaksewu Tour. We offer both group and private tours to this mesmerizing destination.',
         groupTour: {
@@ -145,7 +145,7 @@ export const TOUR_DATA: TourData[] = [
     },
     {
         slug: 'ijen-blue-fire-tour',
-        image: 'ijen-blue-fire.png',
+        image: 'ijen-blue-fire',
         title: 'Ijen Blue Fire Tour',
         description: 'Experience the mesmerizing Ijen Blue Fire with our Ijen Blue Fire Tour. Choose between a Group Tour or a Private Tour for a personalized adventure.',
         groupTour: {

@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const FeaturesSection: React.FC = () => {
     return (
-        <section className={'mt-10 relative'}>
+        <section className={'mt-5 relative'}>
             <div className={'absolute top-0 left-0 opacity-70 -z-10'}>
                 <span>
                     <Image src={map_bg} alt={'Map'}/>
@@ -28,10 +28,10 @@ const FeaturesSection: React.FC = () => {
                         </p>
                     </div>
                 </div>
-               <div className={'flex flex-col lg:flex-row gap-12 items-center justify-center'}>
+               <div className={'flex flex-col gap-12 items-center justify-center'}>
                    {TOUR_DATA.map((tour, index) => (
                        <CardFeatures key={index} title={tour.title} slug={tour.slug} description={tour.description}
-                                     price={tour.privateTour.price} image={tour.image}/>
+                                     price={tour.privateTour.price} image={tour.image} isEven={index % 2 === 0}/>
                    ))}
                </div>
             </div>
