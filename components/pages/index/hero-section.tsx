@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React from "react";
-import {Button} from "flowbite-react";
+import {Button} from "@/components/ui/button";
 import hero_text from '@/public/assets/image/hero/hero-text.svg';
 
 const HeroSection: React.FC = () => {
@@ -26,8 +26,8 @@ const HeroSection: React.FC = () => {
                             Vinny Bromo Sunrise Tour is a tour and travel agency in Malang, East Java, Indonesia. We
                             provide tour packages around East Java for domestic and international tourists.
                         </p>
-                        <Button className="bg-white text-black w-fit hover:bg-gray-50 rounded-full">
-                            Begin Your Journey
+                        <Button variant="secondary">
+                            Start Exploring
                         </Button>
                     </div>
                 </div>

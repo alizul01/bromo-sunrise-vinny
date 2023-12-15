@@ -64,9 +64,6 @@ export default function RootLayout({
     return (
         <html lang="en">
         <body className={inter.className}>
-        <div className={'z-30 absolute w-full'}>
-            <Header/>
-        </div>
         {children}
         <FooterPartials/>
         </body>
