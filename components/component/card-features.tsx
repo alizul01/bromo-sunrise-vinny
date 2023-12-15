@@ -100,7 +100,7 @@ const CardFeatures: React.FC<CardFeaturesProps> = ({ title, slug, description, p
                         </div>
                     </div>
                     <div className={'flex flex-row gap-2 md:gap-4 mt-4 md:mt-0 w-full md:w-fit'}>
-                        <Link className={'bg-orange-500 p-2 px-4 rounded-lg text-white flex flex-row justify-center gap-2 items-center w-full'} href={`/tour/${slug}`}>
+                        <Link className={'bg-orange-500 p-2 px-4 rounded-lg text-white flex flex-row justify-center gap-2 items-center w-full'} href={`/tours/${slug}`}>
                             <div>
                                 <p className={'text-white font-medium text-lg md:text-base tracking-tight leading-8 text-center'}>
                                     See more
