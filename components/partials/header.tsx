@@ -1,6 +1,4 @@
 'use client'
-
-import {Button, Navbar} from "flowbite-react";
 import React from "react";
 import logo from '@/public/assets/image/logo/logo.png';
 import Image from "next/image";
@@ -11,10 +9,6 @@ import Link from "next/link";
 const Header: React.FC = () => {
     const router = usePathname();
     const currentRoute = router.split('/')[1];
-
-    const isRouteActive = (route: string) => {
-        return currentRoute === route;
-    };
 
     return (
         <div className={'sticky top-0'}>
@@ -38,17 +32,10 @@ const Header: React.FC = () => {
                                       aria-current="page">Home</Link>
                             </li>
                             <li>
-                                <Link href="tour"
+                                <Link href="tours"
                                       className="block py-2 px-3 text-white bg-orange-700 font-extralight rounded md:bg-transparent md:text-white md:p-0"
                                       aria-current="page">
                                     Tour
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href=""
-                                      className="block py-2 px-3 text-white bg-orange-700 font-extralight rounded md:bg-transparent md:text-white md:p-0"
-                                      aria-current="page">
-                                    Destination
                                 </Link>
                             </li>
                         </ul>
