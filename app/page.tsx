@@ -1,7 +1,7 @@
 import HeroSection from "@/components/pages/index/hero-section";
 import FeaturesSection from "@/components/pages/index/features-section";
 import WhoWeAreSection from "@/components/pages/index/who-we-are-section";
-import Gallery from "@/components/pages/index/gallery";
+import GallerySection from "@/components/pages/index/gallery-section";
 import Header from "@/components/partials/header";
 import React from "react";
 
@@ -14,7 +14,7 @@ export default function Home() {
             <HeroSection />
             <FeaturesSection />
             <WhoWeAreSection />
-            <Gallery />
+            <GallerySection />
         </main>
     )
 }

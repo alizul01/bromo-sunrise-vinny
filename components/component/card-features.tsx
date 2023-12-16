@@ -56,7 +56,7 @@ const CardFeatures: React.FC<CardFeaturesProps> = ({ title, slug, description, p
     };
 
     return (
-        <div className={`flex w-full gap-4 lg:gap-16 rounded-xl p-2 items-center flex-col justify-center bg-white px-4 md:px-8 lg:px-12 ${isEven ? 'lg:flex-row-reverse' : 'lg:flex-row'} lg:py-8 hover:shadow-xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-103 hover:bg-gray-50 outline-none`}>
+        <div className={`border border-gray-200 flex w-full gap-4 lg:gap-16 rounded-xl p-2 items-center flex-col justify-center bg-white px-4 md:px-8 lg:px-12 ${isEven ? 'lg:flex-row-reverse' : 'lg:flex-row'} lg:py-4 hover:shadow-xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-103 hover:bg-gray-50 outline-none`}>
             <div className="relative w-full h-80 md:h-96 lg:w-[64rem] lg:h-[22rem] rounded-lg max-w-4xl">
                 <Image
                     src={`/assets/image/products/${image}/1.png`}
@@ -94,7 +94,7 @@ const CardFeatures: React.FC<CardFeaturesProps> = ({ title, slug, description, p
                             </p>
                         </div>
                         <div>
-                            <p className={'text-gray-900 font-medium text-xl md:text-2xl text-start tracking-tight leading-8'}>
+                            <p className={'text-gray-900 font-medium text-xl md:text-base text-start tracking-tight leading-8'}>
                                 {formatToRupiah(lowestDomesticPrice)}
                             </p>
                         </div>
