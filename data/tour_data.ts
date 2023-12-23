@@ -10,8 +10,11 @@ interface TourCommon {
     meetingPoint: string[];
 }
 
-interface PrivateTour extends TourCommon {
-    price: Record<number, TourPrice>;
+export interface PrivateTour extends TourCommon {
+    price: {
+        domestic: number[];
+        foreign: number[];
+    };
     additionalRequests: string[];
 }
 
@@ -24,7 +27,7 @@ interface ItineraryStep {
     activity: string;
 }
 
-interface TourData {
+export interface TourData {
     slug: string;
     image: string;
     title: string;
@@ -32,6 +35,10 @@ interface TourData {
     groupTour: GroupTour;
     privateTour: PrivateTour;
     itinerary: ItineraryStep[];
+    requirements?: string[];
+    childrenCategory?: string;
+    exclude?: string[];
+    paymentMethods?: string[];
 }
 
 export const TOUR_DATA: TourData[] = [
@@ -62,12 +69,8 @@ export const TOUR_DATA: TourData[] = [
             ],
             meetingPoint: ['Malang City', 'Surabaya City'],
             price: {
-                1: { domestic: 1400000, foreign: 1700000 },
-                2: { domestic: 700000, foreign: 900000 },
-                3: { domestic: 475000, foreign: 850000 },
-                4: { domestic: 400000, foreign: 700000 },
-                5: { domestic: 350000, foreign: 600000 },
-                6: { domestic: 300000, foreign: 500000 },
+                domestic: [1400000, 700000, 475000, 400000, 350000, 300000],
+                foreign: [1700000, 900000, 850000, 700000, 600000, 500000],
             },
             additionalRequests: [
                 'Contact us if you have requests for meals or places to visit (Madakaripura Waterfall, Pelangi Waterfall, Bromo Hillside Café)',
@@ -82,6 +85,24 @@ export const TOUR_DATA: TourData[] = [
             { timeRange: '10.00 – 12.00', activity: 'Drive to Sand Sea and Savannah (exploring the Sand sea and Savannah)' },
             { timeRange: '12.00 – 14.00', activity: 'Drive back to hotel and end of the tour' },
         ],
+        requirements: [
+            'Wool hat',
+            'Mask',
+            'Warm Clothes',
+            'Gloves',
+            'Long Pants',
+            'Flashlight',
+            'Sunglasses',
+        ],
+        childrenCategory: 'Anak-anak umur dibawah 3 tahun Free',
+        exclude: [
+            'Tiket Kereta/Pesawat dari dan ke Kota Asal Peserta',
+            'Airport Tax',
+            'Pengeluaran pribadi selama tour (laundry, mini bar, dll)',
+            'Tipping guide dan driver (Sukarela)',
+            'Biaya naik kuda/kegiatan lain diluar itinerary',
+        ],
+        paymentMethods: ['Transfer', 'Cash (any currency we receive it)'],
     },
     {
         slug: 'tumpaksewu-tour',
@@ -124,12 +145,8 @@ export const TOUR_DATA: TourData[] = [
             ],
             meetingPoint: ['Malang City'],
             price: {
-                1: { domestic: 1200000, foreign: 1500000 },
-                2: { domestic: 600000, foreign: 750000 },
-                3: { domestic: 450000, foreign: 650000 },
-                4: { domestic: 400000, foreign: 550000 },
-                5: { domestic: 350000, foreign: 450000 },
-                6: { domestic: 300000, foreign: 400000 },
+                domestic: [1200000, 600000, 450000, 400000, 350000, 300000],
+                foreign: [1500000, 750000, 650000, 550000, 450000, 400000],
             },
             additionalRequests: [
                 'Contact us if you have requests for meals or places to visit.',
@@ -142,6 +159,20 @@ export const TOUR_DATA: TourData[] = [
             { timeRange: '11.30 - 14.30', activity: 'Explore the Tumpaksewu waterfalls and enjoy the trip (Panorama Tumpaksewu Waterfalls, Tumpaksewu waterfalls, Tetes Cave, And Telaga Biru)' },
             { timeRange: '14.30 – 17.30', activity: 'Continue driving back to the Hotel in Malang City and end of the tour' },
         ],
+        requirements: [
+            'Second Clothes (because you will get wet in the Tumpaksewu Waterfalls area)',
+            'Sandals/shoes anti-slip',
+        ],
+        childrenCategory: 'Anak-anak umur dibawah 3 tahun Free',
+        exclude: [
+            'Tiket Kereta/Pesawat dari dan ke Kota Asal Peserta',
+            'Airport Tax',
+            'Pengeluaran pribadi selama tour (laundry, mini bar, dll)',
+            'Tipping guide dan driver (Sukarela)',
+            'Biaya naik kuda/kegiatan lain diluar itinerary',
+        ],
+        paymentMethods: ['Transfer', 'Cash (any currency we receive it)'],
+
     },
     {
         slug: 'ijen-blue-fire-tour',
@@ -180,12 +211,8 @@ export const TOUR_DATA: TourData[] = [
             ],
             meetingPoint: ['Banyuwangi City'],
             price: {
-                1: { domestic: 1400000, foreign: 1700000 },
-                2: { domestic: 700000, foreign: 900000 },
-                3: { domestic: 550000, foreign: 650000 },
-                4: { domestic: 400000, foreign: 550000 },
-                5: { domestic: 350000, foreign: 450000 },
-                6: { domestic: 300000, foreign: 400000 },
+                domestic: [1400000, 700000, 550000, 400000, 350000, 300000],
+                foreign: [1700000, 900000, 650000, 550000, 450000, 400000],
             },
             additionalRequests: [
                 'Contact us if you have requests for meals or places to visit.',
@@ -198,5 +225,20 @@ export const TOUR_DATA: TourData[] = [
             { timeRange: '03.30 – 07.30', activity: 'Explore the Ijen Blue Fire and enjoy the trip (Sunrise in the Ijen, Blue Fire, and explore the volcano)' },
             { timeRange: '07.30 – 09.30', activity: 'Continue driving back to the Hotel in Banyuwangi and end of the tour' },
         ],
+        requirements: [
+            'Sandal/anti-slip shoes',
+            'Masker',
+            'Warm clothes',
+            'Glove',
+            'Long pants',
+        ],
+        exclude: [
+            'Tiket Kereta/Pesawat dari dan ke Kota Asal Peserta',
+            'Airport Tax',
+            'Pengeluaran pribadi selama tour (laundry, mini bar, dll)',
+            'Tipping guide dan driver (Sukarela)',
+            'Biaya naik kuda/kegiatan lain diluar itinerary',
+        ],
+        paymentMethods: ['Transfer', 'Cash (any currency we receive it)'],
     }
 ];

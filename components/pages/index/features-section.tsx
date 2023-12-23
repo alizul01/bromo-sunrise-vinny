@@ -31,7 +31,7 @@ const FeaturesSection: React.FC = () => {
                <div className={'flex flex-col gap-12 items-center justify-center'}>
                    {TOUR_DATA.map((tour, index) => (
                        <CardFeatures key={index} title={tour.title} slug={tour.slug} description={tour.description}
-                                     price={tour.privateTour.price} image={tour.image} isEven={index % 2 === 1} include={tour.privateTour.include}/>
+                                     price={tour.privateTour.price.domestic} image={tour.image} isEven={index % 2 === 1} include={tour.privateTour.include}/>
                    ))}
                </div>
             </div>

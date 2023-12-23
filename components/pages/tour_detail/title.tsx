@@ -9,7 +9,6 @@ const Title = ({title, subtitle}: { title: string, subtitle: string }) => (
             <p className="text-gray-600 font-light text-lg text-start tracking-tight leading-8">
                 {subtitle}
             </p>
-            <div className={'container mx-auto w-full h-0.5 bg-gray-200 rounded-full mt-4'}/>
         </div>
     </div>
 );

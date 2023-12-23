@@ -8,7 +8,7 @@ interface CardFeaturesProps {
     title: string;
     slug: string;
     description: string;
-    price: Record<number, { domestic: number; foreign: number }>;
+    price: number[];
     image: string;
     isEven?: boolean;
     include?: string[];
@@ -29,7 +29,7 @@ export const IconText: React.FC<IconTextProps> = ({ icon, text }) => {
 };
 
 const CardFeatures: React.FC<CardFeaturesProps> = ({ title, slug, description, price, image, isEven, include }) => {
-    const lowestDomesticPrice = price[6]?.domestic || 0;
+    const lowestDomesticPrice = Math.min(...price);
     const formatToRupiah = (amount: number) => {
         return new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR" }).format(amount);
     };
