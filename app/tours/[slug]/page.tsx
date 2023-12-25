@@ -36,7 +36,7 @@ const TourDetail: React.FC = () => {
                     <div className={'container mx-auto w-full h-0.5 bg-gray-200 rounded-full my-5'}/>
                     <TripContent tour={tour} />
                 </div>
-                <div className="md:w-1/4">
+                <div className="md:w-1/2">
                     <Booking destination={tour.title} />
                 </div>
             </div>

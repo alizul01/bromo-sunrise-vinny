@@ -1,8 +1,12 @@
 import React from "react";
-import {BsFillCarFrontFill, BsFillFileTextFill} from "react-icons/bs";
-import {FaBus, FaCompass, FaGasPump, FaMountain, FaUserAlt, FaUtensils} from "react-icons/fa";
-import {FaBottleWater} from "react-icons/fa6";
+import {BsFillCarFrontFill, BsFillFileTextFill, BsScrewdriver} from "react-icons/bs";
+import {FaBus, FaCompass, FaFire, FaGasPump, FaMountain, FaUmbrellaBeach, FaUserAlt, FaUtensils} from "react-icons/fa";
+import {FaBottleWater, FaPanorama} from "react-icons/fa6";
 import {PiJeepBold} from "react-icons/pi";
+import {TbBeach, TbMountain} from "react-icons/tb";
+import {Sunrise} from "lucide-react";
+import {GiMountainCave, GiMountainClimbing, GiRiver, GiWaterfall} from "react-icons/gi";
+import {LiaSnowflake} from "react-icons/lia";
 
 interface TourPrice {
     domestic: number;
@@ -12,7 +16,10 @@ interface TourPrice {
 interface TourCommon {
     time: string;
     include: { name: string; icon: React.ReactNode }[];
-    highlight: string[];
+    highlight: {
+        name: string;
+        icon?: React.ReactNode;
+    }[];
     meetingPoint: string[];
 }
 
@@ -56,11 +63,17 @@ export const TOUR_DATA: TourData[] = [
         groupTour: {
             time: 'Setiap hari',
             include: [
-                { name: 'Jeep', icon: <PiJeepBold /> },
-                { name: 'Ticket Entrance', icon: <BsFillFileTextFill /> },
-                { name: 'Bromo Tour', icon: <FaMountain /> },
+                {name: 'Jeep', icon: <PiJeepBold/>},
+                {name: 'Ticket Entrance', icon: <BsFillFileTextFill/>},
+                {name: 'Bromo Tour', icon: <FaMountain/>},
             ],
-            highlight: ['Menggunakan Jeep 4x4 dengan maksimal 6 orang penumpang', 'Mount Bromo', 'Savana Teletubies', 'Bromo Sunrise', 'Pasir Berbisik'],
+            highlight: [
+                {name: 'Menggunakan Jeep 4x4 dengan maksimal 6 orang penumpang', icon: <BsFillCarFrontFill/>},
+                {name: 'Mount Bromo', icon: <FaMountain/>},
+                {name: 'Savana Teletubies', icon: <TbMountain/>},
+                {name: 'Bromo Sunrise', icon: <Sunrise/>},
+                {name: 'Pasir Berbisik', icon: <TbBeach/>},
+            ],
             meetingPoint: ['Malang city'],
             price: {
                 domestic: 350000,
@@ -70,18 +83,18 @@ export const TOUR_DATA: TourData[] = [
         privateTour: {
             time: 'Every day serving Bromo Tour',
             include: [
-                { name: 'Jeep', icon: <BsFillCarFrontFill /> },
-                { name: 'Ticket Entrance', icon: <BsFillFileTextFill /> },
-                { name: 'Driver', icon: <FaUserAlt /> },
-                { name: 'Mineral Water', icon: <FaBottleWater /> },
-                { name: 'Fuel', icon: <FaGasPump /> },
+                {name: 'Jeep', icon: <BsFillCarFrontFill/>},
+                {name: 'Ticket Entrance', icon: <BsFillFileTextFill/>},
+                {name: 'Driver', icon: <FaUserAlt/>},
+                {name: 'Mineral Water', icon: <FaBottleWater/>},
+                {name: 'Fuel', icon: <FaGasPump/>},
             ],
             highlight: [
-                'Using Jeep 4x4 with a maximum of 6 passengers',
-                'Mount Bromo',
-                'Bromo Sunrise',
-                'Savana Teletubies',
-                'Sand Sea',
+                {name: 'Menggunakan Jeep 4x4 dengan maksimal 6 orang penumpang', icon: <BsFillCarFrontFill/>},
+                {name: 'Mount Bromo', icon: <FaMountain/>},
+                {name: 'Savana Teletubies', icon: <TbMountain/>},
+                {name: 'Bromo Sunrise', icon: <Sunrise/>},
+                {name: 'Sand Sea', icon: <FaUmbrellaBeach/>},
             ],
             meetingPoint: ['Malang City', 'Surabaya City'],
             price: {
@@ -93,13 +106,16 @@ export const TOUR_DATA: TourData[] = [
             ],
         },
         itinerary: [
-            { timeRange: '00.00 – 03.00', activity: 'Drive to Penanjakan/Kingkong Hill/Prahu Hill' },
-            { timeRange: '03.00 – 06.00', activity: 'Explore Bromo Sunrise area' },
-            { timeRange: '06.00 – 06.30', activity: 'Drive to Love Hill and explore' },
-            { timeRange: '06.30 – 07.30', activity: 'Drive to Widodaren Mt and explore' },
-            { timeRange: '07.30 – 10.00', activity: 'Drive to Bromo Mt and explore' },
-            { timeRange: '10.00 – 12.00', activity: 'Drive to Sand Sea and Savannah (exploring the Sand sea and Savannah)' },
-            { timeRange: '12.00 – 14.00', activity: 'Drive back to hotel and end of the tour' },
+            {timeRange: '00.00 – 03.00', activity: 'Drive to Penanjakan/Kingkong Hill/Prahu Hill'},
+            {timeRange: '03.00 – 06.00', activity: 'Explore Bromo Sunrise area'},
+            {timeRange: '06.00 – 06.30', activity: 'Drive to Love Hill and explore'},
+            {timeRange: '06.30 – 07.30', activity: 'Drive to Widodaren Mt and explore'},
+            {timeRange: '07.30 – 10.00', activity: 'Drive to Bromo Mt and explore'},
+            {
+                timeRange: '10.00 – 12.00',
+                activity: 'Drive to Sand Sea and Savannah (exploring the Sand sea and Savannah)'
+            },
+            {timeRange: '12.00 – 14.00', activity: 'Drive back to hotel and end of the tour'},
         ],
         requirements: [
             'Wool hat',
@@ -128,18 +144,18 @@ export const TOUR_DATA: TourData[] = [
         groupTour: {
             time: 'Every day serving Tumpaksewu Tour',
             include: [
-                { name: 'Transport', icon: <FaBus /> },
-                { name: 'Ticket Entrance', icon: <BsFillFileTextFill /> },
-                { name: 'Mineral Water', icon: <FaBottleWater /> },
-                { name: 'Driver', icon: <FaUserAlt /> },
-                { name: 'Park and Fuel', icon: <FaGasPump /> },
+                {name: 'Transport', icon: <FaBus/>},
+                {name: 'Ticket Entrance', icon: <BsFillFileTextFill/>},
+                {name: 'Mineral Water', icon: <FaBottleWater/>},
+                {name: 'Driver', icon: <FaUserAlt/>},
+                {name: 'Park and Fuel', icon: <FaGasPump/>},
             ],
             highlight: [
-                'Using Transport with a maximum of 7 passengers',
-                'Panorama Tumpaksewu Waterfalls',
-                'Tumpaksewu Waterfalls',
-                'Tetes Cave',
-                'Telaga Biru',
+                { name: 'Using Transport with a maximum of 7 passengers', icon: <BsFillCarFrontFill /> },
+                { name: 'Panorama Tumpaksewu Waterfalls', icon: <FaPanorama /> },
+                { name: 'Tumpaksewu Waterfalls', icon: <GiWaterfall /> },
+                { name: 'Tetes Cave', icon: <GiMountainCave /> },
+                { name: 'Telaga Biru', icon: <LiaSnowflake /> },
             ],
             meetingPoint: ['Malang City'],
             price: {
@@ -150,20 +166,20 @@ export const TOUR_DATA: TourData[] = [
         privateTour: {
             time: 'Every day serving Tumpaksewu Waterfall Trip',
             include: [
-                { name: 'Transport', icon: <FaBus /> },
-                { name: 'Ticket Entrance', icon: <BsFillFileTextFill /> },
-                { name: 'Driver', icon: <FaUserAlt /> },
-                { name: 'Mineral Water', icon: <FaBottleWater /> },
-                { name: 'Local Guide', icon: <FaUserAlt /> },
-                { name: 'Lunch', icon: <FaUtensils /> },
-                { name: 'Park and Fuel', icon: <FaGasPump /> },
+                {name: 'Transport', icon: <FaBus/>},
+                {name: 'Ticket Entrance', icon: <BsFillFileTextFill/>},
+                {name: 'Driver', icon: <FaUserAlt/>},
+                {name: 'Mineral Water', icon: <FaBottleWater/>},
+                {name: 'Local Guide', icon: <FaUserAlt/>},
+                {name: 'Lunch', icon: <FaUtensils/>},
+                {name: 'Park and Fuel', icon: <FaGasPump/>},
             ],
             highlight: [
-                'Using Transport with a maximum of 6 passengers',
-                'Panorama Tumpaksewu Waterfalls',
-                'Tumpaksewu Waterfalls',
-                'Tetes Cave',
-                'Telaga Biru',
+                { name: 'Using Transport with a maximum of 6 passengers', icon: <BsFillCarFrontFill /> },
+                { name: 'Panorama Tumpaksewu Waterfalls', icon: <FaPanorama /> },
+                { name: 'Tumpaksewu Waterfalls', icon: <GiWaterfall /> },
+                { name: 'Tetes Cave', icon: <GiMountainCave /> },
+                { name: 'Telaga Biru', icon: <LiaSnowflake /> },
             ],
             meetingPoint: ['Malang City'],
             price: {
@@ -175,11 +191,20 @@ export const TOUR_DATA: TourData[] = [
             ],
         },
         itinerary: [
-            { timeRange: '07.00 – 08.00', activity: 'Breakfast in the hotel and prepare for the trip' },
-            { timeRange: '08.00 – 10.00', activity: 'Start driving to the Tumpaksewu Waterfalls' },
-            { timeRange: '10.00 – 11.30', activity: 'Have lunch in the traditional resto and prepare (the traditional resto in the waterfalls area)' },
-            { timeRange: '11.30 - 14.30', activity: 'Explore the Tumpaksewu waterfalls and enjoy the trip (Panorama Tumpaksewu Waterfalls, Tumpaksewu waterfalls, Tetes Cave, And Telaga Biru)' },
-            { timeRange: '14.30 – 17.30', activity: 'Continue driving back to the Hotel in Malang City and end of the tour' },
+            {timeRange: '07.00 – 08.00', activity: 'Breakfast in the hotel and prepare for the trip'},
+            {timeRange: '08.00 – 10.00', activity: 'Start driving to the Tumpaksewu Waterfalls'},
+            {
+                timeRange: '10.00 – 11.30',
+                activity: 'Have lunch in the traditional resto and prepare (the traditional resto in the waterfalls area)'
+            },
+            {
+                timeRange: '11.30 - 14.30',
+                activity: 'Explore the Tumpaksewu waterfalls and enjoy the trip (Panorama Tumpaksewu Waterfalls, Tumpaksewu waterfalls, Tetes Cave, And Telaga Biru)'
+            },
+            {
+                timeRange: '14.30 – 17.30',
+                activity: 'Continue driving back to the Hotel in Malang City and end of the tour'
+            },
         ],
         requirements: [
             'Second Clothes (because you will get wet in the Tumpaksewu Waterfalls area)',
@@ -204,16 +229,16 @@ export const TOUR_DATA: TourData[] = [
         groupTour: {
             time: 'Every day serving Ijen Tour',
             include: [
-                { name: 'Transport', icon: <FaBus /> },
-                { name: 'Ticket Entrance', icon: <BsFillFileTextFill /> },
-                { name: 'Mineral Water', icon: <FaBottleWater /> },
-                { name: 'Driver', icon: <FaUserAlt /> },
-                { name: 'Park and Fuel', icon: <FaGasPump /> },
+                {name: 'Transport', icon: <FaBus/>},
+                {name: 'Ticket Entrance', icon: <BsFillFileTextFill/>},
+                {name: 'Mineral Water', icon: <FaBottleWater/>},
+                {name: 'Driver', icon: <FaUserAlt/>},
+                {name: 'Park and Fuel', icon: <FaGasPump/>},
             ],
             highlight: [
-                'Using Transport with a maximum of 7 passengers',
-                'Ijen Pleatu',
-                'Kawah Ijen',
+                { name: 'Using Transport with a maximum of 7 passengers', icon: <BsFillCarFrontFill /> },
+                { name: 'Ijen Pleatu', icon: <GiRiver /> },
+                { name: 'Kawah Ijen', icon: <BsScrewdriver /> },
             ],
             meetingPoint: ['Banyuwangi City'],
             price: {
@@ -224,19 +249,19 @@ export const TOUR_DATA: TourData[] = [
         privateTour: {
             time: 'Every day serving Ijen Blue Fire Trip',
             include: [
-                { name: 'Transport', icon: <FaBus /> },
-                { name: 'Ticket Entrance', icon: <BsFillFileTextFill /> },
-                { name: 'Driver', icon: <FaUserAlt /> },
-                { name: 'Mineral Water', icon: <FaBottleWater /> },
-                { name: 'Local Guide', icon: <FaCompass /> },
-                { name: 'Lunch', icon: <FaUtensils /> },
-                { name: 'Park and Fuel', icon: <FaGasPump /> },
+                {name: 'Transport', icon: <FaBus/>},
+                {name: 'Ticket Entrance', icon: <BsFillFileTextFill/>},
+                {name: 'Driver', icon: <FaUserAlt/>},
+                {name: 'Mineral Water', icon: <FaBottleWater/>},
+                {name: 'Local Guide', icon: <FaCompass/>},
+                {name: 'Lunch', icon: <FaUtensils/>},
+                {name: 'Park and Fuel', icon: <FaGasPump/>},
             ],
             highlight: [
-                'Using Transport with a maximum of 6 passengers',
-                'Climb Ijen Volcano',
-                'Blue Fire',
-                'Sunrise in Ijen',
+                { name: 'Using Transport with a maximum of 6 passengers', icon: <BsFillCarFrontFill /> },
+                { name: 'Climb Ijen Volcano', icon: <GiMountainClimbing /> },
+                { name: 'Blue Fire', icon: <FaFire /> },
+                { name: 'Sunrise in Ijen', icon: <Sunrise /> },
             ],
             meetingPoint: ['Banyuwangi City'],
             price: {
@@ -248,11 +273,17 @@ export const TOUR_DATA: TourData[] = [
             ],
         },
         itinerary: [
-            { timeRange: '00.00', activity: 'Prepare and pick up in the meeting point/Your hotel' },
-            { timeRange: '00.00 – 02.00', activity: 'Start driving to the Ijen Blue Fire' },
-            { timeRange: '02.00 – 03.30', activity: 'Start trekking until reaching the lake' },
-            { timeRange: '03.30 – 07.30', activity: 'Explore the Ijen Blue Fire and enjoy the trip (Sunrise in the Ijen, Blue Fire, and explore the volcano)' },
-            { timeRange: '07.30 – 09.30', activity: 'Continue driving back to the Hotel in Banyuwangi and end of the tour' },
+            {timeRange: '00.00', activity: 'Prepare and pick up in the meeting point/Your hotel'},
+            {timeRange: '00.00 – 02.00', activity: 'Start driving to the Ijen Blue Fire'},
+            {timeRange: '02.00 – 03.30', activity: 'Start trekking until reaching the lake'},
+            {
+                timeRange: '03.30 – 07.30',
+                activity: 'Explore the Ijen Blue Fire and enjoy the trip (Sunrise in the Ijen, Blue Fire, and explore the volcano)'
+            },
+            {
+                timeRange: '07.30 – 09.30',
+                activity: 'Continue driving back to the Hotel in Banyuwangi and end of the tour'
+            },
         ],
         requirements: [
             'Sandal/anti-slip shoes',
