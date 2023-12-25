@@ -1,3 +1,9 @@
+import React from "react";
+import {BsFillCarFrontFill, BsFillFileTextFill} from "react-icons/bs";
+import {FaBus, FaCompass, FaGasPump, FaMountain, FaUserAlt, FaUtensils} from "react-icons/fa";
+import {FaBottleWater} from "react-icons/fa6";
+import {PiJeepBold} from "react-icons/pi";
+
 interface TourPrice {
     domestic: number;
     foreign: number;
@@ -5,7 +11,7 @@ interface TourPrice {
 
 interface TourCommon {
     time: string;
-    include: string[];
+    include: { name: string; icon: React.ReactNode }[];
     highlight: string[];
     meetingPoint: string[];
 }
@@ -49,7 +55,11 @@ export const TOUR_DATA: TourData[] = [
         description: 'Explore the breathtaking Bromo Tengger Semeru National Park with our Bromo Tour. We offer both group and private tours to Bromo.',
         groupTour: {
             time: 'Setiap hari',
-            include: ['Jeep', 'Ticket Entrance', 'Bromo Tour'],
+            include: [
+                { name: 'Jeep', icon: <PiJeepBold /> },
+                { name: 'Ticket Entrance', icon: <BsFillFileTextFill /> },
+                { name: 'Bromo Tour', icon: <FaMountain /> },
+            ],
             highlight: ['Menggunakan Jeep 4x4 dengan maksimal 6 orang penumpang', 'Mount Bromo', 'Savana Teletubies', 'Bromo Sunrise', 'Pasir Berbisik'],
             meetingPoint: ['Malang city'],
             price: {
@@ -59,7 +69,13 @@ export const TOUR_DATA: TourData[] = [
         },
         privateTour: {
             time: 'Every day serving Bromo Tour',
-            include: ['Jeep', 'Ticket Entrance', 'Driver', 'Mineral Water', 'Fuel'],
+            include: [
+                { name: 'Jeep', icon: <BsFillCarFrontFill /> },
+                { name: 'Ticket Entrance', icon: <BsFillFileTextFill /> },
+                { name: 'Driver', icon: <FaUserAlt /> },
+                { name: 'Mineral Water', icon: <FaBottleWater /> },
+                { name: 'Fuel', icon: <FaGasPump /> },
+            ],
             highlight: [
                 'Using Jeep 4x4 with a maximum of 6 passengers',
                 'Mount Bromo',
@@ -111,7 +127,13 @@ export const TOUR_DATA: TourData[] = [
         description: 'Discover the beauty of Tumpaksewu Waterfalls with our Tumpaksewu Tour. We offer both group and private tours to this mesmerizing destination.',
         groupTour: {
             time: 'Every day serving Tumpaksewu Tour',
-            include: ['Transport', 'Ticket Entrance', 'Mineral Water', 'Driver', 'Park and Fuel'],
+            include: [
+                { name: 'Transport', icon: <FaBus /> },
+                { name: 'Ticket Entrance', icon: <BsFillFileTextFill /> },
+                { name: 'Mineral Water', icon: <FaBottleWater /> },
+                { name: 'Driver', icon: <FaUserAlt /> },
+                { name: 'Park and Fuel', icon: <FaGasPump /> },
+            ],
             highlight: [
                 'Using Transport with a maximum of 7 passengers',
                 'Panorama Tumpaksewu Waterfalls',
@@ -128,13 +150,13 @@ export const TOUR_DATA: TourData[] = [
         privateTour: {
             time: 'Every day serving Tumpaksewu Waterfall Trip',
             include: [
-                'Transport',
-                'Ticket Entrance',
-                'Driver',
-                'Mineral Water',
-                'Local Guide',
-                'Lunch',
-                'Park and Fuel',
+                { name: 'Transport', icon: <FaBus /> },
+                { name: 'Ticket Entrance', icon: <BsFillFileTextFill /> },
+                { name: 'Driver', icon: <FaUserAlt /> },
+                { name: 'Mineral Water', icon: <FaBottleWater /> },
+                { name: 'Local Guide', icon: <FaUserAlt /> },
+                { name: 'Lunch', icon: <FaUtensils /> },
+                { name: 'Park and Fuel', icon: <FaGasPump /> },
             ],
             highlight: [
                 'Using Transport with a maximum of 6 passengers',
@@ -181,7 +203,13 @@ export const TOUR_DATA: TourData[] = [
         description: 'Experience the mesmerizing Ijen Blue Fire with our Ijen Blue Fire Tour. Choose between a Group Tour or a Private Tour for a personalized adventure.',
         groupTour: {
             time: 'Every day serving Ijen Tour',
-            include: ['Transport', 'Ticket Entrance', 'Mineral Water', 'Driver', 'Park and Fuel'],
+            include: [
+                { name: 'Transport', icon: <FaBus /> },
+                { name: 'Ticket Entrance', icon: <BsFillFileTextFill /> },
+                { name: 'Mineral Water', icon: <FaBottleWater /> },
+                { name: 'Driver', icon: <FaUserAlt /> },
+                { name: 'Park and Fuel', icon: <FaGasPump /> },
+            ],
             highlight: [
                 'Using Transport with a maximum of 7 passengers',
                 'Ijen Pleatu',
@@ -196,12 +224,13 @@ export const TOUR_DATA: TourData[] = [
         privateTour: {
             time: 'Every day serving Ijen Blue Fire Trip',
             include: [
-                'Transport',
-                'Ticket Entrance',
-                'Driver',
-                'Mineral Water',
-                'Local Guide',
-                'Park and Fuel',
+                { name: 'Transport', icon: <FaBus /> },
+                { name: 'Ticket Entrance', icon: <BsFillFileTextFill /> },
+                { name: 'Driver', icon: <FaUserAlt /> },
+                { name: 'Mineral Water', icon: <FaBottleWater /> },
+                { name: 'Local Guide', icon: <FaCompass /> },
+                { name: 'Lunch', icon: <FaUtensils /> },
+                { name: 'Park and Fuel', icon: <FaGasPump /> },
             ],
             highlight: [
                 'Using Transport with a maximum of 6 passengers',

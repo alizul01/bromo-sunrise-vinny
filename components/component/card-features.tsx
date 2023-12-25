@@ -11,7 +11,10 @@ interface CardFeaturesProps {
     price: number[];
     image: string;
     isEven?: boolean;
-    include?: string[];
+    include?: {
+        name: string;
+        icon: ReactNode;
+    }[];
 }
 
 interface IconTextProps {
@@ -45,9 +48,14 @@ const CardFeatures: React.FC<CardFeaturesProps> = ({ title, slug, description, p
         return (
             <div className={'flex flex-col md:flex-row md:gap-12'}>
                 {[...Array(numberOfColumns)].map((_, columnIndex) => (
-                    <ul key={columnIndex} className={'list-disc list-inside text-gray-500 font-light text-lg md:text-base text-start tracking-tight leading-8'}>
+                    <ul key={columnIndex} className={'list-disc list-inside text-gray-500 font-light text-lg md:text-base text-start tracking-tight leading-8 space-y-3'}>
                         {include.slice(columnIndex * itemsPerColumn, (columnIndex + 1) * itemsPerColumn).map((item, index) => (
-                            <li key={index}>{item}</li>
+                            <li key={index} className={'flex flex-row gap-3 items-center'}>
+                                {item.icon}
+                                <p className={'text-gray-500 font-light text-lg md:text-base text-start tracking-tight leading-8'}>
+                                    {item.name}
+                                </p>
+                            </li>
                         ))}
                     </ul>
                 ))}

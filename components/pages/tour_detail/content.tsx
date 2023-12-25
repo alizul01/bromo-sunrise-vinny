@@ -100,11 +100,14 @@ const PrivateTour: React.FC<TourTripProps> = ({tour}) => {
                     </div>
                     <div>
                         <h4 className="text-base font-bold text-gray-700 mb-2">Include</h4>
-                        <ul className="list-disc list-inside ml-4">
+                        <div className="grid grid-cols-3 gap-4">
                             {tour.privateTour.include.map((item, index) => (
-                                <li key={index}>{item}</li>
+                                <div key={index} className="flex items-center">
+                                    <span className="mr-2">{item.icon}</span>
+                                    <span>{item.name}</span>
+                                </div>
                             ))}
-                        </ul>
+                        </div>
                     </div>
                     <div>
                         <h4 className="text-base font-bold text-gray-700 mb-2">Highlight</h4>
@@ -173,11 +176,17 @@ const GroupTour: React.FC<TourTripProps> = ({tour}) => {
                     </div>
                     <div>
                         <h4 className="text-base font-bold text-gray-700 mb-2">Include</h4>
-                        <ul className="list-disc list-inside ml-4">
+                        <ul className="grid grid-cols-3 gap-4 list-inside ml-4">
                             {tour.groupTour.include.map((item, index) => (
-                                <li key={index}>{item}</li>
+                                <li key={index} className="flex items-center">
+                                    <span className="mr-2">
+                                        {item.icon}
+                                    </span>
+                                    <span>{item.name}</span>
+                                </li>
                             ))}
                         </ul>
+
                     </div>
                     <div>
                         <h4 className="text-base font-bold text-gray-700 mb-2">Highlight</h4>

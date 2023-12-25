@@ -4,8 +4,18 @@ import map_gallery from "@/public/assets/image/utils/top-gallery.png";
 import {Gallery} from "next-gallery";
 
 const images = [
-    { src: "https://picsum.photos/id/1018/1920/1080/", aspect_ratio: 16/9 },
-    { src: "https://picsum.photos/id/1015/1920/1080/", aspect_ratio: 16/9 },
+    { src: "/assets/image/gallery/1.jpg", aspect_ratio: 16/9 },
+    { src: "/assets/image/gallery/2.png", aspect_ratio: 16/9 },
+    { src: "/assets/image/gallery/3.png", aspect_ratio: 16/9 },
+    { src: "/assets/image/gallery/4.png", aspect_ratio: 16/9 },
+    { src: "/assets/image/gallery/5.png", aspect_ratio: 16/9 },
+    { src: "/assets/image/gallery/6.png", aspect_ratio: 16/9 },
+    { src: "/assets/image/products/bromo/1.png", aspect_ratio: 16/9 },
+    { src: "/assets/image/products/bromo/2.png", aspect_ratio: 16/9 },
+    { src: "/assets/image/products/ijen-blue-fire/1.png", aspect_ratio: 16/9 },
+    { src: "/assets/image/products/ijen-blue-fire/2.png", aspect_ratio: 16/9 },
+    { src: "/assets/image/products/tumpaksewu/1.png", aspect_ratio: 16/9 },
+    { src: "/assets/image/products/tumpaksewu/2.png", aspect_ratio: 16/9 },
 ]
 
 const widths = [1920, 1000, 1600]
@@ -13,7 +23,7 @@ const ratios = [3, 4, 6, 8]
 
 const GallerySection: React.FC = () => {
     return (
-        <section className={'relative container mx-auto xl:max-w-7xl'}>
+        <section className={'relative container mx-auto xl:max-w-7xl my-4'}>
             <div className={'absolute top-0 left-0 opacity-70 -z-10'}>
                     <span>
                         <Image src={map_gallery} alt={'Map'}/>
