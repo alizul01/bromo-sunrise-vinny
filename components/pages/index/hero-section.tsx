@@ -2,18 +2,13 @@
 
 import React from "react";
 import {Button} from "@/components/ui/button";
+import Image from "next/image";
+import hero_image from '@/public/assets/image/products/bromo/3.png';
 
 const HeroSection: React.FC = () => {
     return (
         <div className="w-full h-screen relative">
-            <video
-                className="w-full h-full object-cover"
-                autoPlay
-                loop
-                muted
-                playsInline
-                src="/assets/videos/footage_drone.mp4"
-                />
+            <Image src={hero_image} alt={'hero-image'} layout={'fill'} objectFit={'cover'} quality={100} priority={true} />
             <div className="absolute w-full h-full top-0 left-0 bg-gray-900/70"></div>
             <div
                 className="absolute top-0 w-full h-full flex flex-col justify-center items-center text-center lg:text-start text-white p-4">

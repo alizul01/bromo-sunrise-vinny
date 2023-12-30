@@ -73,6 +73,8 @@ const CardFeatures: React.FC<CardFeaturesProps> = ({ title, slug, description, p
                     sizes={'100%'}
                     style={{ objectFit: "cover" }}
                     className={'rounded-lg'}
+                    priority={true}
+                    loading={'eager'}
                 />
             </div>
             <div className={'flex flex-col items-start w-full lg:py-8 gap-2'}>
