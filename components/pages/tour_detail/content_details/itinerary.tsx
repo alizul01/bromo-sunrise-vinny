@@ -22,9 +22,8 @@ const Itinerary: React.FC<{ itinerary: { timeRange: string; activity: string }[]
                                 <FaClock size={20} />
                             </div>
                             <div>
-                                <p className="text-base font-bold text-gray-700">
-                                    {item.timeRange} - {item.activity}
-                                </p>
+                                <p className="text-base font-bold text-gray-700 mb-1">{item.timeRange}</p>
+                                <p className="text-sm text-gray-500">{item.activity}</p>
                             </div>
                         </motion.div>
                     ))}

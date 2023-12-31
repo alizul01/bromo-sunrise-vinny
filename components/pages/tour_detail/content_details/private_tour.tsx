@@ -1,20 +1,20 @@
 import React from "react";
-import {motion} from "framer-motion";
-import {TourTripProps} from "@/components/pages/tour_detail/content";
+import { motion } from "framer-motion";
+import { TourTripProps } from "@/components/pages/tour_detail/content";
 
-const PrivateTour: React.FC<TourTripProps> = ({tour}) => {
+const PrivateTour: React.FC<TourTripProps> = ({ tour }) => {
     return (
         <motion.div
-            initial={{opacity: 0, y: -20}}
-            animate={{opacity: 1, y: 0}}
-            transition={{duration: 0.5}}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
         >
             <div className="bg-white p-6 shadow-md rounded-lg">
                 <h3 className="text-lg font-bold text-gray-700 mb-4">Private Tour</h3>
                 <div className="flex flex-col gap-3">
                     <div>
                         <h4 className="text-base font-bold text-gray-700 mb-2">Price</h4>
-                        <div className="flex gap-4">
+                        <div className="flex flex-col md:flex-row gap-4">
                             <div>
                                 <h5 className="text-base font-bold text-gray-700 mb-2">Domestic</h5>
                                 <ul className="list-disc list-inside ml-4">
@@ -39,7 +39,7 @@ const PrivateTour: React.FC<TourTripProps> = ({tour}) => {
                     </div>
                     <div>
                         <h4 className="text-base font-bold text-gray-700 mb-2">Include</h4>
-                        <div className="grid grid-cols-3 gap-4 ml-4">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ml-4">
                             {tour.privateTour.include.map((item, index) => (
                                 <div key={index} className="flex items-center">
                                     <span className="mr-2">{item.icon}</span>
@@ -50,7 +50,7 @@ const PrivateTour: React.FC<TourTripProps> = ({tour}) => {
                     </div>
                     <div>
                         <h4 className="text-base font-bold text-gray-700 mb-2">Highlight</h4>
-                        <div className="grid grid-cols-2 gap-4 ml-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ml-4">
                             {tour.privateTour.highlight.map((item, index) => (
                                 <div key={index} className="flex items-center">
                                     <span className="mr-2">{item.icon}</span>

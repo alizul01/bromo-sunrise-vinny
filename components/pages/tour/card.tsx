@@ -27,21 +27,19 @@ const TourCard: React.FC<TourCardProps> = ({ tour }) => {
                     <span className="text-2xl font-bold mb-2">{tour.title}</span>
                 </CardTitle>
                 <CardDescription>
-                    <span className="text-gray-600 mb-4">{tour.description}</span>
+                    <span className="text-gray-600 mb-4 line-clamp-3">{tour.description}</span>
                     <span id={'services'}>
-                        <span className={'grid grid-cols-2 gap-4'}>
-                            <span className={'flex items-center'}>
-                                <BsAirplane className={'text-gray-600'}/>
-                                <span className={'ml-2 text-gray-600'}>Flight Ticket</span>
-                            </span>
-                            <span className={'flex items-center'}>
-                                <BiHotel className={'text-gray-600'}/>
-                                <span className={'ml-2 text-gray-600'}>Hotel</span>
-                            </span>
-                        </span>
+                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 list-inside my-4">
+                            {tour.groupTour.include.slice(1, 3).map((item, index) => (
+                                <li key={index} className="flex items-center">
+                                    <span className="mr-2">{item.icon}</span>
+                                    <span>{item.name}</span>
+                                </li>
+                            ))}
+                        </ul>
                     </span>
                 </CardDescription>
-                <Button asChild className="bg-orange-500 text-white rounded hover:bg-orange-600 focus:outline-none w-fit">
+                <Button asChild className="bg-orange-500 text-white rounded hover:bg-orange-600 focus:outline-none">
                     <Link href={`/tours/${tour.slug}`}> Details </Link>
                 </Button>
             </CardHeader>

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaMoneyBillAlt, FaRegCreditCard, FaChild } from "react-icons/fa"; // Import the icons you need
+import { FaMoneyBillAlt, FaRegCreditCard, FaChild } from "react-icons/fa";
 
 interface AdditionalInfoProps {
     requirements?: string[];
@@ -20,8 +20,6 @@ const AdditionalInfo: React.FC<AdditionalInfoProps> = ({
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-            whileTap={{ scale: 0.95, transition: { duration: 0.2 } }}
         >
             <div className="bg-white p-6 shadow-md rounded-lg">
                 {requirements && (
@@ -36,11 +34,11 @@ const AdditionalInfo: React.FC<AdditionalInfoProps> = ({
                 )}
                 {childrenCategory && (
                     <div className="mb-4">
-                        <h4 className="flex items-center text-base font-bold text-blue-700 mb-2">
+                        <h4 className="flex items-center text-base font-bold mb-2">
                             <FaChild className="mr-2" />
                             Kategori Anak-anak:
                         </h4>
-                        <p className="text-blue-500">{childrenCategory}</p>
+                        <p>{childrenCategory}</p>
                     </div>
                 )}
                 {exclude && (
@@ -55,22 +53,20 @@ const AdditionalInfo: React.FC<AdditionalInfoProps> = ({
                 )}
                 {paymentMethods && (
                     <div className="mb-4">
-                        <h4 className="flex items-center text-base font-bold text-green-700 mb-2">
-                            Metode Pembayaran:
-                        </h4>
+                        <h4 className="text-base font-bold text-gray-700 mb-2">Metode Pembayaran:</h4>
                         <div className="flex flex-wrap gap-4">
                             {paymentMethods.map((item, index) => (
-                                <div key={index} className="flex items-center">
+                                <div key={index} className="flex items-center text-gray-700">
                                     {item === "cash" ? (
-                                        <span className="flex items-center text-green-500">
-                            <FaMoneyBillAlt className="mr-2" />
-                                            {item}
-                        </span>
+                                        <span className="flex items-center">
+                      <FaMoneyBillAlt className="mr-2" />
+                      Tunai
+                    </span>
                                     ) : (
-                                        <span className="flex items-center text-green-500">
-                            <FaRegCreditCard className="mr-2" />
-                                            {item}
-                        </span>
+                                        <span className="flex items-center">
+                      <FaRegCreditCard className="mr-2" />
+                      Kartu Kredit
+                    </span>
                                     )}
                                 </div>
                             ))}

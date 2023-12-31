@@ -1,7 +1,6 @@
 'use client'
 
 import React from "react";
-import {motion} from "framer-motion";
 import map_travel from '@/public/assets/image/utils/map-travel.png';
 import SERVICE_DATA from "@/data/services_data";
 import BoxFeatures from "@/components/component/box-features";
@@ -14,12 +13,8 @@ const WhoWeAreSection: React.FC = () => {
     };
 
     return (
-        <motion.section className={'border-y-[1.5px] border-gray-300 mt-24'}>
-            <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={containerVariants}
-                transition={{duration: 0.5}}
+        <section className={'border-y-[1.5px] border-gray-300 mt-24'}>
+            <div
                 className={"px-6 xl:px-0 xl:max-w-[82rem] container mx-auto relative"}
             >
                 <div className={'absolute top-0 left-0 opacity-70 -z-10'}>
@@ -53,8 +48,8 @@ const WhoWeAreSection: React.FC = () => {
                         </div>
                     </div>
                 </div>
-            </motion.div>
-        </motion.section>
+            </div>
+        </section>
     );
 };
 
