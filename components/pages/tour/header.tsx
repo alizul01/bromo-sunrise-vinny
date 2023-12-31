@@ -1,18 +1,40 @@
 import React from "react";
+import {motion} from "framer-motion";
+
+const bounceAnimation = {
+    hidden: { y: -20, opacity: 0 },
+    visible: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            duration: 0.8,
+            ease: "easeInOut",
+        },
+    },
+};
 
 const TourHeader: React.FC = () => {
     return (
-        <div className="text-center mt-12 mb-8">
-            <h1 className="text-4xl font-extrabold text-gray-800">
-                Explore Our Exciting Tours
-            </h1>
-            <p className="mt-2 text-lg text-gray-600">
-                Uncover the beauty and adventure that await you
-            </p>
-            <div className="flex justify-center mt-6">
-                <div className="w-16 h-[0.5px] bg-orange-500"></div>
-            </div>
-        </div>
+        <section id={'copywriting-cta'} className="mt-10">
+            <motion.div
+                variants={bounceAnimation}
+                initial="hidden"
+                animate="visible"
+            >
+                <h2 className={'text-3xl font-bold text-gray-800 mb-2'}>
+                    Explore the Beauty of East Java with Us
+                </h2>
+            </motion.div>
+            <motion.div
+                variants={bounceAnimation}
+                initial="hidden"
+                animate="visible"
+            >
+                <p className={'text-lg text-gray-600 mb-6'}>
+                    Embark on a journey filled with wonders and unforgettable experiences. Discover our diverse tour packages tailored for you.
+                </p>
+            </motion.div>
+        </section>
     );
 };
 

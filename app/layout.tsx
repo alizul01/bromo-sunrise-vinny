@@ -9,13 +9,13 @@ const inter = Inter({subsets: ['latin']})
 
 
 export const metadata: Metadata = {
-    title: 'Vinny Bromo Sunrise Tour',
-    description: 'Vinny Bromo Sunrise Tour is a tour and travel agency in Malang, East Java, Indonesia.',
+    title: 'Bromo Smart Tour',
+    description: 'Bromo Smart Tour is a tour and travel agency in Malang, East Java, Indonesia.',
     authors: {
         name: 'Muhammad Ali Zulfikar',
         url: 'https://www.alizul01.my.id',
     },
-    abstract: 'Vinny Bromo Sunrise Tour is a tour and travel agency in Malang, East Java, Indonesia. We provide tour packages around East Java for domestic and international tourists. We also provide car rental services for those of you who want to travel in Malang and surrounding areas. We are ready to serve you 24 hours.',
+    abstract: 'Bromo Smart Tour is a tour and travel agency in Malang, East Java, Indonesia. We provide tour packages around East Java for domestic and international tourists. We also provide car rental services for those of you who want to travel in Malang and surrounding areas. We are ready to serve you 24 hours.',
     icons: {
         icon: '/favicon.ico',
     },
@@ -52,8 +52,8 @@ export const metadata: Metadata = {
             },
         ],
     },
-    applicationName: 'Vinny Bromo Sunrise Tour',
-    creator: 'Vinny Bromo Sunrise Tour',
+    applicationName: 'Bromo Smart Tour',
+    creator: 'Bromo Smart Tour',
 }
 
 export default function RootLayout({
