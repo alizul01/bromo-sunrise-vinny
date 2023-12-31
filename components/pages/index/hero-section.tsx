@@ -3,7 +3,7 @@
 import React from "react";
 import {Button} from "@/components/ui/button";
 import Image from "next/image";
-import hero_image from '@/public/assets/image/products/bromo/3.png';
+import hero_image from '@/public/assets/image/products/bromo/3.webp';
 
 const HeroSection: React.FC = () => {
     return (

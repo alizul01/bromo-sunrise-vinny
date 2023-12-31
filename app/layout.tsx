@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     twitter: {
         images: [
             {
-                url: '/assets/image/products/bromo/1.png',
+                url: '/assets/image/products/bromo/1.webp',
                 alt: 'Bromo Tour',
                 type: 'image/png',
                 height: 630,

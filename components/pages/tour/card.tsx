@@ -22,7 +22,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour }) => {
     return (
         <Card className={cn("w-[380px]")}>
             <CardHeader>
-                <Image src={`/assets/image/products/${tour.image}/2.png`} alt={tour.title} width={380} height={250} className="w-full h-48 object-cover mb-4 rounded-lg"/>
+                <Image src={`/assets/image/products/${tour.image}/2.webp`} alt={tour.title} width={380} height={250} className="w-full h-48 object-cover mb-4 rounded-lg"/>
                 <CardTitle>
                     <h2 className="text-2xl font-bold mb-2">{tour.title}</h2>
                 </CardTitle>

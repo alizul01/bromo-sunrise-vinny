@@ -6,18 +6,18 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const GallerySection: React.FC = () => {
     const images = [
-        "/assets/image/gallery/1.jpg",
-        "/assets/image/gallery/2.png",
-        "/assets/image/gallery/3.png",
-        "/assets/image/gallery/4.png",
-        "/assets/image/gallery/5.png",
-        "/assets/image/gallery/6.png",
-        "/assets/image/products/bromo/1.png",
-        "/assets/image/products/bromo/2.png",
-        "/assets/image/products/ijen-blue-fire/1.png",
-        "/assets/image/products/ijen-blue-fire/2.png",
-        "/assets/image/products/tumpaksewu/1.png",
-        "/assets/image/products/tumpaksewu/2.png",
+        "/assets/image/gallery/1.webp",
+        "/assets/image/gallery/2.webp",
+        "/assets/image/gallery/3.webp",
+        "/assets/image/gallery/4.webp",
+        "/assets/image/gallery/5.webp",
+        "/assets/image/gallery/6.webp",
+        "/assets/image/products/bromo/1.webp",
+        "/assets/image/products/bromo/2.webp",
+        "/assets/image/products/ijen-blue-fire/1.webp",
+        "/assets/image/products/ijen-blue-fire/2.webp",
+        "/assets/image/products/tumpaksewu/1.webp",
+        "/assets/image/products/tumpaksewu/2.webp",
     ];
 
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -32,7 +32,6 @@ const GallerySection: React.FC = () => {
 
     return (
         <section className="relative container mx-auto xl:max-w-7xl my-4">
-            {/* Your background image here */}
             <div className="absolute top-0 left-0 opacity-70 -z-10">
                 <Image src="/assets/image/utils/top-gallery.png" alt="Map" width={1920} height={1080} />
             </div>
@@ -60,7 +59,15 @@ const GallerySection: React.FC = () => {
                         transition={{ duration: 0.5 }}
                         whileHover={{ scale: 1.05, transition: { duration: 0.5 } }}
                     >
-                        <Image src={image} alt={`Gallery Image ${index + 1}`} layout="fill" objectFit="cover" />
+                        <Image
+                            src={image}
+                            alt={`Gallery Image ${index + 1}`}
+                            fill
+                            style={{
+                                objectFit: "cover",
+                                objectPosition: "center",
+                            }}
+                        />
                     </motion.div>
                 ))}
             </div>

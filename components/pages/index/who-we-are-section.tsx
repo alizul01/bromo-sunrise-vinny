@@ -5,7 +5,6 @@ import {motion} from "framer-motion";
 import map_travel from '@/public/assets/image/utils/map-travel.png';
 import SERVICE_DATA from "@/data/services_data";
 import BoxFeatures from "@/components/component/box-features";
-import map_bg from '@/public/assets/image/utils/map.png';
 import Image from "next/image";
 
 const WhoWeAreSection: React.FC = () => {

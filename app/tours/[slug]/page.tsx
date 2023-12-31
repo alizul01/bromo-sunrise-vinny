@@ -17,7 +17,7 @@ const TourDetail: React.FC = () => {
     if (!tour) return null;
 
     const getImageUrl = (index: number) =>
-        `/assets/image/products/${tour.image}/${index + 1}.png`;
+        `/assets/image/products/${tour.image}/${index + 1}.webp`;
 
     const imageGallery = Array.from({ length: 4 }, (_, index) =>
         getImageUrl(index)
