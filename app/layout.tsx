@@ -4,6 +4,8 @@ import './globals.css'
 import React from "react";
 import FooterPartials from "@/components/partials/footer";
 import {Toaster} from "@/components/ui/toaster";
+import TopBar from "@/components/partials/top-bar";
+import Header from "@/components/partials/header";
 
 const inter = Inter({subsets: ['latin']})
 
@@ -64,6 +66,10 @@ export default function RootLayout({
     return (
         <html lang="en">
         <body className={inter.className}>
+        <div className={'sm:block hidden'}>
+            <TopBar />
+        </div>
+        <Header/>
         {children}
         <Toaster />
         <FooterPartials/>

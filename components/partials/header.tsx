@@ -2,10 +2,9 @@
 import React, {useEffect, useState} from "react";
 import logo from '@/public/assets/image/logo/logo.png';
 import Image from "next/image";
-import {HiPhone} from "react-icons/hi";
 import {usePathname} from "next/navigation";
 import Link from "next/link";
-import {Button} from "@/components/ui/button";
+import NAVIGATION_DATA from "@/data/navigation";
 
 const Header: React.FC = () => {
     const [isHomePage, setIsHomePage] = useState(false);
@@ -17,41 +16,27 @@ const Header: React.FC = () => {
     }, [currentRoute]);
 
     return (
-        <div className={'sticky top-0'}>
-            <nav
-                className={"w-full z-20 top-0 start-0 " + (isHomePage ? 'bg-white' : 'absolute bg-transparent')}>
-                <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
-                    <Link href={`/`}>
-                        <Image src={logo} alt={'Vinny Bromo Logo Tour'} width={50} height={50} className={'cursor-pointer'}/>
+        <nav className={"w-full z-20 top-0 start-0 bg-white"}>
+            <div className={'container'}>
+                <div className="flex flex-wrap items-center justify-between py-2">
+                    <Link href={`/`} className={'flex gap-1 items-center'}>
+                        <Image src={logo} alt={'Vinny Bromo Logo Tour'} width={58} height={58}
+                               className={'cursor-pointer'}/>
                     </Link>
-                    <div className="flex md:order-2 space-x-3 md:space-x-0">
-                        <Button asChild variant={'default'} className={'bg-orange-500 hover:bg-orange-600'}>
-                            <Link href="/contact">
-                                <HiPhone className={'inline-block mr-2'}/>
-                                Call Us
-                            </Link>
-                        </Button>
-                    </div>
-                    <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
-                         id="navbar-sticky">
-                        <ul className="flex flex-col md:p-0 rounded-lg md:space-x-8 md:flex-row">
-                            <li>
-                                <Link href="/"
-                                      className={"block py-2 px-3 bg-orange-700 rounded md:bg-transparent md:p-0 " + (isHomePage ? 'text-black font-extralight' : 'text-orange-400 font-medium')}
-                                      aria-current="page">Home</Link>
-                            </li>
-                            <li>
-                                <Link href="/tours"
-                                      className={"block py-2 px-3 bg-orange-700 rounded md:bg-transparent md:p-0 " + (isHomePage ? 'text-orange-400 font-medium' : ' text-white')}
-                                      aria-current="page">
-                                    Tour
-                                </Link>
-                            </li>
-                        </ul>
+                    <div className={'flex items-center justify-end gap-7'}>
+                        {NAVIGATION_DATA.map((item, index) => {
+                                return (
+                                    <Link href={item.link} key={index}
+                                          className={`text-base font-normal text-gray-700 hover:text-gray-900`}>
+                                        {item.title}
+                                    </Link>
+                                )
+                            }
+                        )}
                     </div>
                 </div>
-            </nav>
-        </div>
+            </div>
+        </nav>
     )
 }
 
