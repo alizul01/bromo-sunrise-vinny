@@ -9,9 +9,6 @@ import FaqComponents from "@/components/component/faqComponents";
 const Contact: React.FC = () => {
     return (
         <section>
-            <div className={'w-full'}>
-                <Header/>
-            </div>
             <div className={'mx-auto max-w-7xl mt-10'}>
                 <h1 className={'text-3xl font-bold mb-6'}>
                     Contact Us

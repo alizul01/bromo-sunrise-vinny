@@ -16,6 +16,9 @@ const config: Config = {
                 "2xl": "1400px",
             },
         },
+        fontFamily: {
+            sans: ["Inter", "sans-serif"],
+        },
         extend: {
             keyframes: {
                 "accordion-down": {

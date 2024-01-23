@@ -187,11 +187,11 @@ const Booking: React.FC<bookingFormValues> = ({destination}) => {
                 <CardFooter>
                     <p className="text-xs text-gray-400">
                         By clicking the button, you are agreeing to our{" "}
-                        <a href="#" className="text-orange-400">
+                        <a href="#" className="text-cyan-400">
                             Privacy Policy
                         </a>{" "}
                         and{" "}
-                        <a href="#" className="text-orange-400">
+                        <a href="#" className="text-cyan-400">
                             Terms of Use
                         </a>
                         .

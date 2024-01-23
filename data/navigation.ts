@@ -10,15 +10,15 @@ const NAVIGATION_DATA: Navigation[] = [
         link: '/',
     },
     {
-        title: 'Destinations and Tours',
-        link: '/tour',
+        title: 'Tours',
+        link: '/tours',
     },
     {
-        title: 'About',
+        title: 'About Us',
         link: '/about',
     },
     {
-        title: 'Contact Us',
+        title: 'Contact',
         link: '/contact',
     },
 ];

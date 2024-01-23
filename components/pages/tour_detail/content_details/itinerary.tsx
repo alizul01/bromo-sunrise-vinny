@@ -18,7 +18,7 @@ const Itinerary: React.FC<{ itinerary: { timeRange: string; activity: string }[]
                             className="flex items-start mb-4 cursor-pointer"
                             whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
                         >
-                            <div className="mr-4 text-orange-500">
+                            <div className="mr-4 text-cyan-500">
                                 <FaClock size={20} />
                             </div>
                             <div>

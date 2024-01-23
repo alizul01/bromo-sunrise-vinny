@@ -3,31 +3,41 @@
 import React from "react";
 import {Button} from "@/components/ui/button";
 import Image from "next/image";
-import hero_image from '@/public/assets/image/products/bromo/3.webp';
+import hero_image from '@/public/assets/image/hero/hero.png';
+import {GoPaperAirplane} from "react-icons/go";
+import {motion} from "framer-motion";
 
 const HeroSection: React.FC = () => {
+
     return (
-        <div className="w-full h-screen relative">
-            <Image src={hero_image} alt={'hero-image'} layout={'fill'} objectFit={'cover'} quality={100} priority={true} />
-            <div className="absolute w-full h-full top-0 left-0 bg-gray-900/70"></div>
-            <div
-                className="absolute top-0 w-full h-full flex flex-col justify-center items-center text-center lg:text-start text-white p-4">
-                <div className={"mx-auto container flex items-center justify-center"}>
-                    <div className={'lg:w-1/2 items-center lg:items-center justify-center flex flex-col gap-8'}>
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 max-w-2xl tracking-tight text-center">
-                            Bromo Smart Tour
-                        </h1>
-                        <p className="text-lg md:text-xl mb-4 font-extralight text-center max-w-2xl tracking-tight">
-                            Bromo Smart Tour is a tour and travel agency in Malang, East Java, Indonesia. We
-                            provide tour packages around East Java for domestic and international tourists.
-                        </p>
-                        <Button variant="secondary">
-                            Start Exploring
-                        </Button>
-                    </div>
+        <motion.div
+            className="container my-8 md:my-12">
+            <div className={'flex flex-col-reverse md:flex-row items-center gap-3 justify-center md:`justify-between'}>
+                <div className={'flex flex-col items-center justify-center md:items-start gap-5 basis-1/2'}>
+                    <span className={'w-fit p-3 bg-white text-cyan-500 flex items-center gap-2 rounded-full shadow-md mb-4'}>
+                        <GoPaperAirplane className={'text-xl'}/> <span className={'font-bold'}>Explore the East Java!</span>
+                    </span>
+                    <h1 className={'font-bold text-4xl md:text-6xl md:leading-tight md:text-start text-center'}>
+                        Travel Around East Java with <span
+                        className={'text-cyan-500'}>Bromo Smart Tour</span>
+                    </h1>
+                    <p className={'leading-relaxed font-normal text-gray-600 md:text-start text-center'}>
+                        We always give the extraordinary experience for you. We provide tour packages around East Java for domestic and international tourists.
+                    </p>
+                    <Button className={'w-fit bg-cyan-500 hover:bg-cyan-600'}>
+                        Get Started
+                    </Button>
                 </div>
+                <motion.div
+                    initial={{opacity: 0, y: 50}}
+                    animate={{opacity: 1, y: 0}}
+                    transition={{delay: 0.5}}
+                >
+                    <Image className={'w-[42rem]'} src={hero_image} alt={'Bromo Smart Tour Image'} width={1080} height={1080}/>
+                </motion.div>
             </div>
-        </div>
+            <div className={'absolute right-0 w-[32rem] h-[32rem] bg-cyan-400 rounded-full blur-3xl opacity-10 sm:block md:opacity-25'}/>
+        </motion.div>
     )
 }
 

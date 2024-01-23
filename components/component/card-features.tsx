@@ -37,7 +37,7 @@ const CardFeatures: React.FC<CardFeaturesProps> = ({
     };
 
     return (
-        <Link href={`/${slug}`}>
+        <Link href={`/tours/${slug}`}>
             <motion.div
                 className="relative w-80 h-[28rem] mx-auto rounded-xl overflow-hidden cursor-pointer"
                 onHoverStart={handleHover}
@@ -56,14 +56,14 @@ const CardFeatures: React.FC<CardFeaturesProps> = ({
                     className="absolute inset-0 bg-gradient-to-t from-black to-black/20 opacity-30 rounded-md"
                 />
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }} // Set opacity to 0 initially
+                    initial={{opacity: 0, y: 20}} // Set opacity to 0 initially
                     animate={controls}
-                    transition={{ duration: 0.3 }}
+                    transition={{duration: 0.3}}
                     className="absolute inset-0 bg-gradient-to-t from-black to-black/20 opacity-80 rounded-md"
                 />
                 <div className="absolute inset-0 flex items-end justify-start p-4">
                     <div className={"flex flex-col gap-2"}>
-                    <motion.div
+                        <motion.div
                             animate={{y: isHovered ? -10 : 0}}
                             className={"flex items-center"}
                         >

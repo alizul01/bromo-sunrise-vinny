@@ -24,6 +24,11 @@ const SERVICE_DATA: ServiceFeature[] = [
         description: "Experience camping and trekking adventures to breathtaking locations, including Ijen, Semeru, and more.",
         icon: <FaCampground />
     },
+    {
+        title: "Tour Packages",
+        description: "We provide tour packages around East Java for domestic and international tourists.",
+        icon: <FaServicestack />
+    },
 ];
 
 export default SERVICE_DATA;

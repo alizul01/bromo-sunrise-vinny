@@ -65,13 +65,10 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-        <body className={inter.className}>
-        <div className={'sm:block hidden'}>
-            <TopBar />
-        </div>
+        <body>
         <Header/>
         {children}
-        <Toaster />
+        <Toaster/>
         <FooterPartials/>
         </body>
         </html>

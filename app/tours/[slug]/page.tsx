@@ -25,9 +25,6 @@ const TourDetail: React.FC = () => {
 
     return (
         <div>
-            <div className={'w-full'}>
-                <Header/>
-            </div>
             <div className="px-6 xl:px-0 container mx-auto start py-4 mb-12 flex gap-8 flex-col md:flex-row">
                 <div>
                     <Title title={tour.title} subtitle={tour.description} />

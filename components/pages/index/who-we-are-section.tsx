@@ -1,53 +1,64 @@
 'use client'
 
-import React from "react";
-import map_travel from '@/public/assets/image/utils/map-travel.png';
+import React, { useEffect, useRef } from "react";
 import SERVICE_DATA from "@/data/services_data";
 import BoxFeatures from "@/components/component/box-features";
-import Image from "next/image";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const WhoWeAreSection: React.FC = () => {
     const containerVariants = {
-        hidden: {opacity: 0, x: -50},
-        visible: {opacity: 1, x: 0},
+        hidden: { opacity: 0, x: -50 },
+        visible: { opacity: 1, x: 0 },
     };
 
-    return (
-        <section className={'border-y-[1.5px] border-gray-300 mt-24'}>
-            <div
-                className={"px-6 xl:px-0 xl:max-w-[82rem] container mx-auto relative"}
-            >
-                <div className={'absolute top-0 left-0 opacity-70 -z-10'}>
-                    <span>
-                        <Image src={map_travel} alt={'Map'}/>
-                    </span>
-                </div>
-                <div className={"flex flex-col gap-2 items-start justify-center "}>
-                    <div className="py-12">
-                        <div className="container">
-                            <div className={'flex flex-col items-center gap-4 py-4 mb-12'}>
-                                <div>
-                                    <h2 className={'text-xl xl:text-2xl font-medium text-gray-900'}>
-                                        Our Services
-                                    </h2>
-                                    <div className={'container mx-auto w-12 h-0.5 bg-orange-400 rounded-full mt-4'}/>
-                                </div>
-                                <div>
-                                    <p className={'text-gray-600 font-light text-lg text-center'}>
-                                        We provide tour packages around East Java for domestic and international
-                                        tourists.
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-16 mt-16">
-                                {SERVICE_DATA.map((feature, index) => (
-                                    <BoxFeatures key={index} feature={feature}/>
-                                ))}
-                            </div>
+    const controls = useAnimation();
+    const [ref, inView] = useInView({
+        triggerOnce: true,
+    });
 
+    useEffect(() => {
+        if (inView) {
+            controls.start("visible");
+        }
+    }, [controls, inView]);
+
+    return (
+        <section
+            ref={ref}
+            className={'border-y-[1.5px] border-gray-300 mt-12 relative'}
+        >
+            <div className={"container"}>
+                <motion.div
+                    className={"flex flex-col gap-2 items-start justify-center "}
+                    initial="hidden"
+                    animate={controls}
+                    variants={containerVariants}
+                >
+                    <div className="py-6">
+                        <div className={"flex flex-col items-center sm:items-start gap-1"}>
+                            <h2 className={"text-xl xl:text-2xl font-bold text-gray-900 tracking-wide uppercase"}>
+                                Our Services
+                            </h2>
+                            <div>
+                                <p className={"text-gray-600 font-light text-lg text-center"}>
+                                    We give you the best service for your trip, so you can
+                                    enjoy your trip without any worries.
+                                </p>
+                            </div>
                         </div>
+                        <motion.div
+                            className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-16 mt-12"
+                            initial="hidden"
+                            animate={controls}
+                            variants={containerVariants}
+                        >
+                            {SERVICE_DATA.map((feature, index) => (
+                                <BoxFeatures key={index} feature={feature} />
+                            ))}
+                        </motion.div>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     );

@@ -39,7 +39,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour }) => {
                         </ul>
                     </span>
                 </CardDescription>
-                <Button asChild className="bg-orange-500 text-white rounded hover:bg-orange-600 focus:outline-none">
+                <Button asChild className="bg-cyan-500 text-white rounded hover:bg-cyan-600 focus:outline-none">
                     <Link href={`/tours/${tour.slug}`}> Details </Link>
                 </Button>
             </CardHeader>

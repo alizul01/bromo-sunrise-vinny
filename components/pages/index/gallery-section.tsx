@@ -31,19 +31,18 @@ const GallerySection: React.FC = () => {
     };
 
     return (
-        <section className="relative container mx-auto xl:max-w-7xl my-4">
+        <section className="relative container mx-auto my-4">
             <div className="absolute top-0 left-0 opacity-70 -z-10">
                 <Image src="/assets/image/utils/top-gallery.png" alt="Map" width={1920} height={1080} />
             </div>
 
-            <div className="flex flex-col items-center gap-4 pb-4 pt-16 mb-2">
+            <div className={'flex flex-col items-center sm:items-start gap-1 py-8 '}>
+                <h2 className={'text-xl xl:text-2xl font-bold text-gray-900 tracking-wide uppercase'}>
+                    Gallery
+                </h2>
                 <div>
-                    <h2 className="text-xl xl:text-2xl font-medium text-gray-900">Gallery</h2>
-                    <div className="container mx-auto w-12 h-0.5 bg-orange-400 rounded-full mt-4" />
-                </div>
-                <div>
-                    <p className="text-gray-600 font-light text-lg text-center">
-                        Look around the beauty of East Java with us. You will be amazed by the beauty of nature.
+                    <p className={'text-gray-600 font-light text-lg text-center'}>
+                        Look at our gallery, and see how beautiful Indonesia is.
                     </p>
                 </div>
             </div>
