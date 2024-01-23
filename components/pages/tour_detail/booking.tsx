@@ -2,7 +2,6 @@ import {
     Card,
     CardContent,
     CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
@@ -184,19 +183,6 @@ const Booking: React.FC<bookingFormValues> = ({destination}) => {
                         </form>
                     </Form>
                 </CardContent>
-                <CardFooter>
-                    <p className="text-xs text-gray-400">
-                        By clicking the button, you are agreeing to our{" "}
-                        <a href="#" className="text-cyan-400">
-                            Privacy Policy
-                        </a>{" "}
-                        and{" "}
-                        <a href="#" className="text-cyan-400">
-                            Terms of Use
-                        </a>
-                        .
-                    </p>
-                </CardFooter>
             </Card>
         </Fragment>
     )

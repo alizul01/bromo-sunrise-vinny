@@ -5,12 +5,11 @@ import {Button} from "@/components/ui/button";
 import Image from "next/image";
 import hero_image from '@/public/assets/image/hero/hero.png';
 import {GoPaperAirplane} from "react-icons/go";
-import {motion} from "framer-motion";
 
 const HeroSection: React.FC = () => {
 
     return (
-        <motion.div
+        <div
             className="container my-8 md:my-12">
             <div className={'flex flex-col-reverse md:flex-row items-center gap-3 justify-center md:`justify-between'}>
                 <div className={'flex flex-col items-center justify-center md:items-start gap-5 basis-1/2'}>
@@ -28,16 +27,12 @@ const HeroSection: React.FC = () => {
                         Get Started
                     </Button>
                 </div>
-                <motion.div
-                    initial={{opacity: 0, y: 50}}
-                    animate={{opacity: 1, y: 0}}
-                    transition={{delay: 0.5}}
-                >
+                <div>
                     <Image className={'w-[42rem]'} src={hero_image} alt={'Bromo Smart Tour Image'} width={1080} height={1080}/>
-                </motion.div>
+                </div>
             </div>
             <div className={'absolute right-0 w-[32rem] h-[32rem] bg-cyan-400 rounded-full blur-3xl opacity-10 sm:block md:opacity-25'}/>
-        </motion.div>
+        </div>
     )
 }
 

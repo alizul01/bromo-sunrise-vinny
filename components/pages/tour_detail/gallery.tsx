@@ -18,7 +18,7 @@ const GalleryTourSection: React.FC<GalleryTourSectionProps> = ({ images }) => {
 
     return (
         <section>
-            <div className={'mt-4'}>
+            <div>
                 <Carousel
                     className="w-full"
                     opts={{
@@ -33,16 +33,19 @@ const GalleryTourSection: React.FC<GalleryTourSectionProps> = ({ images }) => {
                             <CarouselItem key={index}>
                                 <div>
                                     {image && (
-                                        <Image
-                                            src={image}
-                                            alt={`Gallery Image ${index + 1}`}
-                                            className="rounded-md object-cover w-full h-96"
-                                            width={1080}
-                                            height={1080}
-                                            priority={true}
-                                            loading={"eager"}
-                                            id={`gallery-image-${index + 1}`}
-                                        />
+                                        <div className={'relative'}>
+                                            <span className={'absolute top-0 left-0 h-full w-full bg-gradient-to-r from-cyan-700 to-cyan-200/50 opacity-40 rounded-md'}/>
+                                            <Image
+                                                src={image}
+                                                alt={`Gallery Image ${index + 1}`}
+                                                className="rounded-md object-cover w-full h-96"
+                                                width={1080}
+                                                height={1080}
+                                                priority={true}
+                                                loading={"eager"}
+                                                id={`gallery-image-${index + 1}`}
+                                            />
+                                        </div>
                                     )}
                                 </div>
                             </CarouselItem>

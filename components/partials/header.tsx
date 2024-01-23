@@ -5,7 +5,6 @@ import Image from "next/image";
 import {usePathname} from "next/navigation";
 import Link from "next/link";
 import NAVIGATION_DATA from "@/data/navigation";
-import {FaHamburger} from "react-icons/fa";
 import {BiMenu} from "react-icons/bi";
 import {motion, AnimatePresence} from "framer-motion";
 
@@ -23,11 +22,8 @@ const Header: React.FC = () => {
     }, [currentRoute]);
 
     return (
-        <motion.nav
+        <nav
             className="w-full z-20 top-0 start-0 bg-white shadow-md"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
         >
             <div className="container max-w-7xl">
                 <div className="flex flex-wrap items-center justify-between py-2">
@@ -74,7 +70,7 @@ const Header: React.FC = () => {
                     )}
                 </AnimatePresence>
             </div>
-        </motion.nav>
+        </nav>
     );
 };
 
