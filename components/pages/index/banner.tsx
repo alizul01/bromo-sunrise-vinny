@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import BannerImage from "@/public/assets/banner/banner-1.png";
-import {Button} from "@/components/ui/button";
 
 const Banner: React.FC = () => {
     return (

@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import SERVICE_DATA from "@/data/services_data";
 import BoxFeatures from "@/components/component/box-features";
 import { motion, useAnimation } from "framer-motion";

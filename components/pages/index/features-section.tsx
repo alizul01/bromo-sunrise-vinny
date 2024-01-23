@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import map_bg from '@/public/assets/image/utils/map.png';
 import CardFeatures from "@/components/component/card-features";
 import { TOUR_DATA } from "@/data/tour_data";
