@@ -8,7 +8,7 @@ import {
 
 import {
     Form,
-    FormControl,
+    FormControl, FormDescription,
     FormField,
     FormItem,
     FormLabel,
@@ -18,22 +18,26 @@ import {
 import {Button} from "@/components/ui/button"
 import React, {Fragment} from "react";
 import {cn} from "@/lib/utils";
-import {Check} from "lucide-react";
+import {CalendarIcon, Check} from "lucide-react";
 import * as z from "zod"
 import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {Input} from "@/components/ui/input";
 import {RadioGroup, RadioGroupItem} from "@/components/ui/radio-group";
 import {useToast} from "@/components/ui/use-toast";
+import {Popover, PopoverContent, PopoverTrigger} from "@/components/ui/popover";
+import {Calendar} from "@/components/ui/calendar";
+import { format } from "date-fns";
 
 const formSchema = z.object({
     name: z.string().min(2).max(50),
     email: z.string().email(),
+    date: z.date().min(new Date("1900-01-01")),
     tourismType: z.enum(["domestic", "international"], {
         required_error: "You must select one of the options",
     }),
     destination: z.string().min(2).max(50),
-    person: z.number().min(1).max(6),
+    person: z.string(),
 })
 
 export interface bookingFormValues {
@@ -47,9 +51,10 @@ const Booking: React.FC<bookingFormValues> = ({destination}) => {
         defaultValues: {
             name: "",
             email: "",
+            date: undefined,
             tourismType: undefined,
             destination: destination,
-            person: 1,
+            person: "",
         },
 
     })
@@ -68,8 +73,9 @@ const Booking: React.FC<bookingFormValues> = ({destination}) => {
 
             if (countdown === 0) {
                 clearInterval(countdownInterval);
+                const formattedDate = format(data.date, "MMMM d, yyyy");
 
-                const whatsappMessage = `Hello Bromo Smart Tour, I'm ${data.name} and I want to book a tour to ${data.destination} with ${data.tourismType} tourism type.`;
+                const whatsappMessage = `Hello Bromo Smart Tour, I'm ${data.name} and I want to book a tour to ${data.destination} with ${data.tourismType} tourism type on ${formattedDate} for ${data.person} person.`;
                 const phoneNumber = '6282143261091';
                 const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
@@ -117,6 +123,50 @@ const Booking: React.FC<bookingFormValues> = ({destination}) => {
                                             <Input type={'email'} placeholder="What Is Your Name?" {...field} />
                                         </FormControl>
                                         <FormMessage/>
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={form.control}
+                                name="date"
+                                render={({ field }) => (
+                                    <FormItem className="flex flex-col">
+                                        <FormLabel>Date</FormLabel>
+                                        <Popover>
+                                            <PopoverTrigger asChild>
+                                                <FormControl>
+                                                    <Button
+                                                        variant={"outline"}
+                                                        className={cn(
+                                                            "pl-3 text-left font-normal",
+                                                            !field.value && "text-muted-foreground"
+                                                        )}
+                                                    >
+                                                        {field.value ? (
+                                                            format(field.value, "PPP")
+                                                        ) : (
+                                                            <span>Pick a date</span>
+                                                        )}
+                                                        <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                                                    </Button>
+                                                </FormControl>
+                                            </PopoverTrigger>
+                                            <PopoverContent className="w-auto p-0" align="start">
+                                                <Calendar
+                                                    mode="single"
+                                                    selected={field.value}
+                                                    onSelect={field.onChange}
+                                                    disabled={(date) =>
+                                                        date < new Date("1900-01-01")
+                                                    }
+                                                    initialFocus
+                                                />
+                                            </PopoverContent>
+                                        </Popover>
+                                        <FormDescription>
+                                            Your date of birth is used to calculate your age.
+                                        </FormDescription>
+                                        <FormMessage />
                                     </FormItem>
                                 )}
                             />
