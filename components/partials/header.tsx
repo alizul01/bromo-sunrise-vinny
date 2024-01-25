@@ -23,7 +23,7 @@ const Header: React.FC = () => {
 
     return (
         <nav
-            className="w-full z-20 top-0 start-0 bg-white shadow-md"
+            className="w-full sticky z-20 top-0 start-0 bg-white"
         >
             <div className="container max-w-7xl">
                 <div className="flex flex-wrap items-center justify-between py-2">
