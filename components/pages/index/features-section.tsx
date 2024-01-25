@@ -26,7 +26,7 @@ const FeaturesSection: React.FC = () => {
     };
 
     return (
-        <section className={'relative'}>
+        <section className={'relative'} id={"tours"}>
             <div className={'absolute top-0 left-0 opacity-70 -z-10'}>
                 <span>
                     <Image src={map_bg} alt={'Map'}/>

@@ -1,4 +1,5 @@
 'use client'
+
 import React, {useEffect, useState} from "react";
 import logo from '@/public/assets/image/logo/logo.png';
 import Image from "next/image";
@@ -31,9 +32,9 @@ const Header: React.FC = () => {
                             <Image src={logo} alt="Vinny Bromo Logo Tour" width={58} height={58} className="cursor-pointer"/>
                     </Link>
 
-                    <div className={`hidden sm:flex items-center justify-end gap-7 ${isMenuOpen ? 'hidden' : ''}`}>
+                    <div className={`hidden sm:flex items-center justify-end gap-4 ${isMenuOpen ? 'hidden' : ''}`}>
                         {NAVIGATION_DATA.map((item, index) => (
-                            <Link key={index} href={item.link} passHref className={`text-sm font-normal ${currentRoute === item.link.replace('/', '') ? 'text-gray-900' : 'text-gray-700 hover:text-gray-900'}`}
+                            <Link key={index} href={item.link} passHref className={`text-sm hover:text-gray-700 hover:bg-gray-100 p-2 rounded-md  ${currentRoute === item.link.replace('/', '') ? ' text-gray-900 font-semibold text-gray-900 bg-gray-100' : 'text-gray-700 font-normal'}`}
                                 >
                                     {item.title}
                             </Link>
@@ -55,14 +56,14 @@ const Header: React.FC = () => {
                 <AnimatePresence>
                     {isMenuOpen && (
                         <motion.div
-                            className="sm:hidden flex flex-col items-start gap-2 mt-2 py-4"
+                            className="sm:hidden flex flex-col items-start gap-2 mt-2 p-4 bg-gray-50 border border-gray-100"
                             initial={{ opacity: 0, y: -20 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
                             transition={{ duration: 0.3 }}
                         >
                             {NAVIGATION_DATA.map((item, index) => (
-                                <Link key={index} href={item.link} passHref className={`p-2 bg-cyan-100 w-full rounded-md text-sm font-normal ${currentRoute === item.link.replace('/', '') ? 'text-gray-900' : 'text-gray-700 hover:text-gray-900'}`}>
+                                <Link key={index} href={item.link} passHref className={`block py-2 px-3 w-full rounded-md text-sm font-normal ${currentRoute === item.link.replace('/', '') ? 'text-gray-100 bg-gray-950 font-semibold' : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'}`}>
                                         {item.title}
                                 </Link>
                             ))}

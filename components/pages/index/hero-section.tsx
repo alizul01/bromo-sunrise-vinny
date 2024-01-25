@@ -5,6 +5,7 @@ import {Button} from "@/components/ui/button";
 import Image from "next/image";
 import hero_image from '@/public/assets/image/hero/hero.png';
 import {GoPaperAirplane} from "react-icons/go";
+import Link from "next/link";
 
 const HeroSection: React.FC = () => {
 
@@ -13,7 +14,7 @@ const HeroSection: React.FC = () => {
             className="container my-8 md:my-12">
             <div className={'flex flex-col-reverse md:flex-row items-center gap-3 justify-center md:`justify-between'}>
                 <div className={'flex flex-col items-center justify-center md:items-start gap-5 basis-1/2'}>
-                    <span className={'w-fit p-3 bg-white text-cyan-500 flex items-center gap-2 rounded-full shadow-md mb-4'}>
+                    <span className={'w-fit p-3 bg-white text-cyan-500 flex items-center gap-2 rounded-full shadow-md mb-4 cursor-default hover:scale-105 transition duration-300 ease-in-out'}>
                         <GoPaperAirplane className={'text-xl'}/> <span className={'font-bold'}>Explore the East Java!</span>
                     </span>
                     <h1 className={'font-bold text-4xl md:text-6xl md:leading-tight md:text-start text-center'}>
@@ -23,8 +24,10 @@ const HeroSection: React.FC = () => {
                     <p className={'leading-relaxed font-normal text-gray-600 md:text-start text-center'}>
                         We always give the extraordinary experience for you. We provide tour packages around East Java for domestic and international tourists.
                     </p>
-                    <Button className={'w-fit bg-cyan-500 hover:bg-cyan-600'}>
-                        Get Started
+                    <Button asChild={true} className={'w-fit bg-cyan-500 hover:bg-cyan-600'}>
+                        <Link href={'#tours'}>
+                            Get Started
+                        </Link>
                     </Button>
                 </div>
                 <div>
