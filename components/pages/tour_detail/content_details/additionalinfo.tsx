@@ -23,7 +23,7 @@ const AdditionalInfo: React.FC<AdditionalInfoProps> = ({
             transition={{ duration: 0.5 }}
         >
             <div>
-                <div className={'bg-red-50 py-6 gap-4 px-3 flex items-center justify-start'}>
+                <div className={'bg-red-50 py-6 gap-4 px-3 flex items-center justify-start mb-4'}>
                     <span className={'bg-red-400 p-2 rounded-lg'}>
                        <BsInfo className={'text-xl text-white'}/>
                     </span>
@@ -32,7 +32,7 @@ const AdditionalInfo: React.FC<AdditionalInfoProps> = ({
                     </h3>
                 </div>
                 {requirements && (
-                    <div className="mb-4">
+                    <div className="border rounded-lg overflow-hidden shadow-md p-6 bg-white mb-4">
                         <h4 className="text-base font-bold text-gray-700 mb-2">Keperluan yang Perlu Dibawa:</h4>
                         <ul className="list-disc list-inside ml-4">
                             {requirements.map((item, index) => (
@@ -42,7 +42,7 @@ const AdditionalInfo: React.FC<AdditionalInfoProps> = ({
                     </div>
                 )}
                 {childrenCategory && (
-                    <div className="mb-4">
+                    <div className="border rounded-lg overflow-hidden shadow-md p-6 bg-white mb-4">
                         <h4 className="flex items-center text-base font-bold mb-2">
                             <FaChild className="mr-2" />
                             Kategori Anak-anak:
@@ -51,7 +51,7 @@ const AdditionalInfo: React.FC<AdditionalInfoProps> = ({
                     </div>
                 )}
                 {exclude && (
-                    <div className="mb-4">
+                    <div className="border rounded-lg overflow-hidden shadow-md p-6 bg-white mb-4">
                         <h4 className="text-base font-bold text-gray-700 mb-2">Tour Exclude:</h4>
                         <ul className="list-disc list-inside ml-4">
                             {exclude.map((item, index) => (
@@ -61,7 +61,7 @@ const AdditionalInfo: React.FC<AdditionalInfoProps> = ({
                     </div>
                 )}
                 {paymentMethods && (
-                    <div className="mb-4">
+                    <div className="border rounded-lg overflow-hidden shadow-md p-6 bg-white mb-4">
                         <h4 className="text-base font-bold text-gray-700 mb-2">Metode Pembayaran:</h4>
                         <div className="flex flex-wrap gap-4">
                             {paymentMethods.map((item, index) => (

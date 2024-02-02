@@ -9,7 +9,7 @@ export interface TourTripProps {
 const TripContent: React.FC<TourTripProps> = ({tour}) => {
     return (
         <section>
-            <p className={'my-8 text-sm text-slate-500 leading-relaxed tracking-normal'}>
+            <p className={'my-8 text-base text-slate-500 leading-relaxed tracking-normal'}>
                 {tour.description}
             </p>
             <div className={'flex flex-col gap-4 justify-between'}>
