@@ -22,7 +22,7 @@ const TourHeader: React.FC = () => {
                 animate="visible"
             >
                 <h2 className={'text-3xl font-bold text-gray-800 mb-2'}>
-                    Explore the Beauty of East Java with Us
+
                 </h2>
             </motion.div>
             <motion.div

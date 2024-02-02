@@ -1,6 +1,7 @@
 import React from "react";
 import { FaClock } from "react-icons/fa";
 import { motion } from "framer-motion";
+import {CalendarClock} from "lucide-react";
 
 const Itinerary: React.FC<{ itinerary: { timeRange: string; activity: string }[] }> = ({ itinerary }) => {
     return (
@@ -9,8 +10,15 @@ const Itinerary: React.FC<{ itinerary: { timeRange: string; activity: string }[]
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
         >
-            <div className="bg-white p-6 shadow-md rounded-lg mt-4">
-                <h3 className="text-lg font-bold text-gray-700 mb-4">Itinerary</h3>
+            <div>
+                <div className={'bg-cyan-50 py-6 gap-4 px-3 flex items-center justify-start'}>
+                    <span className={'bg-cyan-400 p-2 rounded-lg'}>
+                       <CalendarClock className={'text-xl text-white'}/>
+                    </span>
+                    <h3 className="text-lg font-bold text-cyan-900">
+                        Itinerary
+                    </h3>
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {itinerary.map((item, index) => (
                         <motion.div

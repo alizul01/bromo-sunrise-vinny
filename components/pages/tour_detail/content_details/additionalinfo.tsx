@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaMoneyBillAlt, FaRegCreditCard, FaChild } from "react-icons/fa";
+import {BsInfo} from "react-icons/bs";
 
 interface AdditionalInfoProps {
     requirements?: string[];
@@ -21,7 +22,15 @@ const AdditionalInfo: React.FC<AdditionalInfoProps> = ({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
         >
-            <div className="bg-white p-6 shadow-md rounded-lg">
+            <div>
+                <div className={'bg-red-50 py-6 gap-4 px-3 flex items-center justify-start'}>
+                    <span className={'bg-red-400 p-2 rounded-lg'}>
+                       <BsInfo className={'text-xl text-white'}/>
+                    </span>
+                    <h3 className="text-lg font-bold text-red-900">
+                        Additional Information
+                    </h3>
+                </div>
                 {requirements && (
                     <div className="mb-4">
                         <h4 className="text-base font-bold text-gray-700 mb-2">Keperluan yang Perlu Dibawa:</h4>

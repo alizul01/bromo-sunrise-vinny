@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { TourTripProps } from "@/components/pages/tour_detail/content";
+import {HiUserGroup} from "react-icons/hi";
 
 const GroupTour: React.FC<TourTripProps> = ({ tour }) => {
     return (
@@ -9,8 +10,13 @@ const GroupTour: React.FC<TourTripProps> = ({ tour }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
         >
-            <div className="bg-white p-6 shadow-md rounded-lg">
-                <h3 className="text-lg font-bold text-gray-700 mb-4">Group Tour</h3>
+            <div>
+                <div className={'bg-purple-50 py-6 gap-4 px-3 flex items-center justify-start'}>
+                    <span className={'bg-purple-400 p-2 rounded-lg'}>
+                       <HiUserGroup className={'text-xl text-white'}/>
+                    </span>
+                    <h3 className="text-lg font-bold text-purple-950">Group Tour</h3>
+                </div>
                 <div className="flex flex-col gap-3">
                     <div>
                         <h4 className="text-base font-bold text-gray-700 mb-2">Price</h4>

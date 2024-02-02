@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { TourTripProps } from "@/components/pages/tour_detail/content";
+import {HiUser} from "react-icons/hi";
 
 const PrivateTour: React.FC<TourTripProps> = ({ tour }) => {
     return (
@@ -9,8 +10,13 @@ const PrivateTour: React.FC<TourTripProps> = ({ tour }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
         >
-            <div className="bg-white p-6 shadow-md rounded-lg">
-                <h3 className="text-lg font-bold text-gray-700 mb-4">Private Tour</h3>
+            <div>
+                <div className={'bg-blue-50 py-6 gap-4 px-3 flex items-center justify-start'}>
+                    <span className={'bg-blue-400 p-2 rounded-lg'}>
+                       <HiUser className={'text-xl text-white'}/>
+                    </span>
+                    <h3 className="text-lg font-bold text-blue-950">Private Tour</h3>
+                </div>
                 <div className="flex flex-col gap-3">
                     <div>
                         <h4 className="text-base font-bold text-gray-700 mb-2">Price</h4>

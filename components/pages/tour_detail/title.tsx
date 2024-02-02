@@ -1,8 +1,12 @@
+
+import {HiLocationMarker} from "react-icons/hi";
+
 const Title = ({title}: { title: string }) => (
     <div className={'flex flex-col gap-3'}>
-        <div>
-            <h2 className="text-xl leading-7 md:text-3xl font-semibold text-gray-900">
-                Best of {title}
+        <div className={'flex items-center gap-3'}>
+            <HiLocationMarker className={'text-purple-500 text-3xl'}/>
+            <h2 className="text-xl leading-7 md:text-3xl font-bold">
+                {title}
             </h2>
         </div>
         <div className={'flex items-center text-sm'}>

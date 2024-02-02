@@ -92,7 +92,7 @@ const Booking: React.FC<bookingFormValues> = ({destination}) => {
 
     return (
         <Fragment>
-            <Card className={cn('sticky top-10')}>
+            <Card className={cn('sticky top-20')}>
                 <CardHeader>
                     <CardTitle>Booking</CardTitle>
                     <CardDescription>Book a tour</CardDescription>

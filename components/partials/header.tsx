@@ -34,7 +34,7 @@ const Header: React.FC = () => {
 
                     <div className={`hidden sm:flex items-center justify-end gap-4 ${isMenuOpen ? 'hidden' : ''}`}>
                         {NAVIGATION_DATA.map((item, index) => (
-                            <Link key={index} href={item.link} passHref className={`text-sm hover:text-gray-700 hover:bg-gray-100 p-2 rounded-md  ${currentRoute === item.link.replace('/', '') ? ' text-gray-900 font-semibold text-gray-900 bg-gray-100' : 'text-gray-700 font-normal'}`}
+                            <Link key={index} href={item.link} passHref className={`text-sm hover:text-cyan-900 hover:bg-cyan-50 px-4 py-2 rounded-full  ${currentRoute === item.link.replace('/', '') ? 'font-semibold border-2 border-cyan-600' : 'text-cyan-700 font-normal'}`}
                                 >
                                     {item.title}
                             </Link>

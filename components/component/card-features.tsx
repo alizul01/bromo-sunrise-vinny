@@ -8,7 +8,7 @@ interface CardFeaturesProps {
     title: string;
     slug: string;
     description: string;
-    price: number[];
+    price: number;
     image: string;
 }
 
@@ -53,7 +53,7 @@ const CardFeatures: React.FC<CardFeaturesProps> = ({
                 />
 
                 <div
-                    className="absolute inset-0 bg-gradient-to-t from-black to-black/20 opacity-30 rounded-md"
+                    className="absolute inset-0 bg-gradient-to-t from-black to-black/10 opacity-70 rounded-md"
                 />
                 <motion.div
                     initial={{opacity: 0, y: 20}} // Set opacity to 0 initially
@@ -75,7 +75,7 @@ const CardFeatures: React.FC<CardFeaturesProps> = ({
                         <div className="text-white text-sm font-light">
                             Starting from <br/>
                             <span className={"font-bold text-lg"}>
-                                {formatToRupiah(price[1])} / Person
+                                {formatToRupiah(price)} / Person
                             </span>
                         </div>
                     </div>

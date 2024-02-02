@@ -10,8 +10,6 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 import Image from "next/image";
-import {BsAirplane} from "react-icons/bs";
-import {BiHotel} from "react-icons/bi";
 import Link from "next/link";
 
 interface TourCardProps {

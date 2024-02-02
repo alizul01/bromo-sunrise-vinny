@@ -5,6 +5,7 @@ import {Button} from "@/components/ui/button";
 import Link from "next/link";
 import {HiPhone} from "react-icons/hi";
 import {motion} from "framer-motion";
+import {cn} from "@/lib/utils";
 
 const fadeInAnimation = {
     hidden: {opacity: 0},
@@ -42,7 +43,7 @@ const Banner: React.FC = () => {
                             Discover the beauty and cultural richness of East Java with our exclusive tour packages.
                             Immerse yourself in breathtaking landscapes and authentic experiences.
                         </p>
-                        <Button asChild variant={'default'} className={'bg-cyan-500 hover:bg-cyan-600'}>
+                        <Button asChild variant={'default'} className={cn('bg-cyan-500 hover:bg-cyan-600')}>
                             <Link href={url} className={'flex gap-2 items-center'}>
                                 <HiPhone className={'text-xl'}/>
                                 <span>Book Now</span>

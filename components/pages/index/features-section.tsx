@@ -58,7 +58,7 @@ const FeaturesSection: React.FC = () => {
                 >
                     {TOUR_DATA.map((tour, index) => (
                         <CardFeatures key={index} title={tour.title} slug={tour.slug} description={tour.description}
-                                      price={tour.privateTour.price.domestic} image={tour.image}/>
+                                      price={tour.groupTour.price.domestic} image={tour.image}/>
                     ))}
                 </motion.div>
             </div>

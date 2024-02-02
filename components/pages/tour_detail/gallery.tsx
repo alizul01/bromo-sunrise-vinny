@@ -34,7 +34,7 @@ const GalleryTourSection: React.FC<GalleryTourSectionProps> = ({ images }) => {
                                 <div>
                                     {image && (
                                         <div className={'relative'}>
-                                            <span className={'absolute top-0 left-0 h-full w-full bg-gradient-to-r from-cyan-700 to-cyan-200/50 opacity-40 rounded-md'}/>
+                                            <span className={'absolute top-0 left-0 h-full w-full bg-gradient-to-r from-purple-700 to-purple-900 opacity-20 rounded-md'}/>
                                             <Image
                                                 src={image}
                                                 alt={`Gallery Image ${index + 1}`}
