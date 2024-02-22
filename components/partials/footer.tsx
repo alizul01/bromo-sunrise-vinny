@@ -2,12 +2,10 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import footer_image from '@/public/assets/image/gallery/6.webp';
 import logo from '@/public/assets/image/logo/logo.png';
 import {
     FacebookIcon,
     InstagramIcon,
-    PhoneCall,
     TwitterIcon,
 } from "lucide-react";
 
@@ -113,25 +111,25 @@ export const FooterPartials = () => {
                     <div className="flex">
                         <p className="mr-1 text-gray-800">Email:</p>
                         <a
-                            href="mailto:info@lorem.mail"
+                            href="mailto:bromosunrise@gmail.com"
                             aria-label="Our email"
                             title="Our email"
                             className="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800"
                         >
-                            info@lorem.mail
+                            bromosunrise@gmail.com
                         </a>
                     </div>
                     <div className="flex">
                         <p className="mr-1 text-gray-800">Address:</p>
                         <a
-                            href="https://www.google.com/maps"
+                            href="https://maps.app.goo.gl/pNYsMDaz3y12kVpA6"
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="Our address"
                             title="Our address"
                             className="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800"
                         >
-                            312 Lovely Street, NY
+                            Jl. Graha Pelita Asri No.B-30, Pandanwangi, Kec. Blimbing, Kota Malang
                         </a>
                     </div>
                 </div>

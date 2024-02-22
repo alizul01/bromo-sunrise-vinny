@@ -2,7 +2,6 @@
 import React from "react";
 import TourCard from "@/components/pages/tour/card";
 import { TOUR_DATA } from "@/data/tour_data";
-import Banner from "@/components/pages/tour/banner";
 import Image from "next/image";
 import hero_image from "@/public/assets/image/products/tumpaksewu/2.webp";
 import Breadcrumbs from "@/components/partials/breadcrumbs";
@@ -36,13 +35,12 @@ const ToursPage: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div className={'px-10 mx-auto max-w-7xl mt-10'}>
+            <div className={'container mx-auto max-w-7xl mt-10'}>
                 <div className={'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mt-10'}>
                     {TOUR_DATA.map((tour) => (
                         <TourCard key={tour.slug} tour={tour} />
                     ))}
                 </div>
-                <Banner />
             </div>
         </div>
     );
