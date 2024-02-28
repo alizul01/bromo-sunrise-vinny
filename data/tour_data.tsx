@@ -68,11 +68,11 @@ export const TOUR_DATA: TourData[] = [
                 {name: 'Bromo Tour', icon: <FaMountain/>},
             ],
             highlight: [
-                {name: 'Menggunakan Jeep 4x4 dengan maksimal 6 orang penumpang', icon: <BsFillCarFrontFill/>},
-                {name: 'Mount Bromo', icon: <FaMountain/>},
+                {name: 'Using Jeep 4x4 with maximum 6 passenger', icon: <BsFillCarFrontFill/>},
+                {name: 'Bromo Mount', icon: <FaMountain/>},
                 {name: 'Savana Teletubies', icon: <TbMountain/>},
                 {name: 'Bromo Sunrise', icon: <Sunrise/>},
-                {name: 'Pasir Berbisik', icon: <TbBeach/>},
+                {name: 'Whisper Sand', icon: <TbBeach/>},
             ],
             meetingPoint: ['Malang city'],
             price: {
@@ -90,8 +90,8 @@ export const TOUR_DATA: TourData[] = [
                 {name: 'Fuel', icon: <FaGasPump/>},
             ],
             highlight: [
-                {name: 'Menggunakan Jeep 4x4 dengan maksimal 6 orang penumpang', icon: <BsFillCarFrontFill/>},
-                {name: 'Mount Bromo', icon: <FaMountain/>},
+                {name: 'Using Jeep 4x4 with maximum 6 passenger', icon: <BsFillCarFrontFill/>},
+                {name: 'Bromo Mount', icon: <FaMountain/>},
                 {name: 'Savana Teletubies', icon: <TbMountain/>},
                 {name: 'Bromo Sunrise', icon: <Sunrise/>},
                 {name: 'Sand Sea', icon: <FaUmbrellaBeach/>},
@@ -128,13 +128,13 @@ export const TOUR_DATA: TourData[] = [
         ],
         childrenCategory: 'Anak-anak umur dibawah 3 tahun Free',
         exclude: [
-            'Tiket Kereta/Pesawat dari dan ke Kota Asal Peserta',
+            'Airplane/Train from and to passenger region',
             'Airport Tax',
-            'Pengeluaran pribadi selama tour (laundry, mini bar, dll)',
-            'Tipping guide dan driver (Sukarela)',
-            'Biaya naik kuda/kegiatan lain diluar itinerary',
+            'Personal expenses during the tour (laundry, mini bar, etc.)',
+            'Driver / Guide Tipping (Voluntary)',
+            'Costs for other activities outside the itinerary',
         ],
-        paymentMethods: ['Transfer', 'Cash (any currency we receive it)'],
+        paymentMethods: ['Transfer', 'Cash'],
     },
     {
         slug: 'tumpaksewu-tour',
@@ -212,13 +212,13 @@ export const TOUR_DATA: TourData[] = [
         ],
         childrenCategory: 'Anak-anak umur dibawah 3 tahun Free',
         exclude: [
-            'Tiket Kereta/Pesawat dari dan ke Kota Asal Peserta',
+            'Airplane/Train from and to passenger region',
             'Airport Tax',
-            'Pengeluaran pribadi selama tour (laundry, mini bar, dll)',
-            'Tipping guide dan driver (Sukarela)',
-            'Biaya naik kuda/kegiatan lain diluar itinerary',
+            'Personal expenses during the tour (laundry, mini bar, etc.)',
+            'Driver / Guide Tipping (Voluntary)',
+            'Costs for other activities outside the itinerary',
         ],
-        paymentMethods: ['Transfer', 'Cash (any currency we receive it)'],
+        paymentMethods: ['Transfer', 'Cash'],
 
     },
     {
@@ -238,7 +238,7 @@ export const TOUR_DATA: TourData[] = [
             highlight: [
                 { name: 'Using Transport with a maximum of 7 passengers', icon: <BsFillCarFrontFill /> },
                 { name: 'Ijen Pleatu', icon: <GiRiver /> },
-                { name: 'Kawah Ijen', icon: <BsScrewdriver /> },
+                { name: 'Ijen Crater', icon: <BsScrewdriver /> },
             ],
             meetingPoint: ['Banyuwangi City'],
             price: {
@@ -293,12 +293,12 @@ export const TOUR_DATA: TourData[] = [
             'Long pants',
         ],
         exclude: [
-            'Tiket Kereta/Pesawat dari dan ke Kota Asal Peserta',
+            'Airplane/Train from and to passenger region',
             'Airport Tax',
-            'Pengeluaran pribadi selama tour (laundry, mini bar, dll)',
-            'Tipping guide dan driver (Sukarela)',
-            'Biaya naik kuda/kegiatan lain diluar itinerary',
+            'Personal expenses during the tour (laundry, mini bar, etc.)',
+            'Driver / Guide Tipping (Voluntary)',
+            'Costs for other activities outside the itinerary',
         ],
-        paymentMethods: ['Transfer', 'Cash (any currency we receive it)'],
+        paymentMethods: ['Transfer', 'Cash'],
     }
 ];
