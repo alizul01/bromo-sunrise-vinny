@@ -44,7 +44,7 @@ const CardFeatures: React.FC<CardFeaturesProps> = ({
                 onHoverEnd={handleHoverExit}
             >
                 <Image
-                    src={`/assets/image/products/${image}/1.webp`}
+                    src={`/assets/image/products/${image}/1.jpg`}
                     alt={title}
                     fill
                     sizes={"100%"}

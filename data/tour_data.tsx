@@ -1,12 +1,23 @@
 import React from "react";
-import {BsFillCarFrontFill, BsFillFileTextFill, BsScrewdriver} from "react-icons/bs";
-import {FaBus, FaCompass, FaFire, FaGasPump, FaMountain, FaUmbrellaBeach, FaUserAlt, FaUtensils} from "react-icons/fa";
+import {BsBicycle, BsFillCarFrontFill, BsFillFileTextFill, BsScrewdriver} from "react-icons/bs";
+import {
+    FaBus,
+    FaCompass,
+    FaFire,
+    FaGasPump,
+    FaIndustry, FaLeaf,
+    FaMountain,
+    FaUmbrellaBeach,
+    FaUserAlt,
+    FaUtensils
+} from "react-icons/fa";
 import {FaBottleWater, FaPanorama} from "react-icons/fa6";
 import {PiJeepBold} from "react-icons/pi";
 import {TbBeach, TbMountain} from "react-icons/tb";
 import {Sunrise} from "lucide-react";
-import {GiMountainCave, GiMountainClimbing, GiRiver, GiWaterfall} from "react-icons/gi";
+import {GiCycle, GiHelmet, GiIsland, GiMountainCave, GiMountainClimbing, GiRiver, GiWaterfall} from "react-icons/gi";
 import {LiaSnowflake} from "react-icons/lia";
+import {IoFastFoodOutline} from "react-icons/io5";
 
 interface TourPrice {
     domestic: number;
@@ -45,7 +56,7 @@ export interface TourData {
     image: string;
     title: string;
     description: string;
-    groupTour: GroupTour;
+    groupTour: GroupTour | null;
     privateTour: PrivateTour;
     itinerary: ItineraryStep[];
     requirements?: string[];
@@ -77,7 +88,7 @@ export const TOUR_DATA: TourData[] = [
             meetingPoint: ['Malang city'],
             price: {
                 domestic: 350000,
-                foreign: 700000,
+                foreign: 650000,
             },
         },
         privateTour: {
@@ -98,24 +109,24 @@ export const TOUR_DATA: TourData[] = [
             ],
             meetingPoint: ['Malang City', 'Surabaya City'],
             price: {
-                domestic: [1400000, 700000, 475000, 400000, 350000, 300000],
-                foreign: [1700000, 900000, 850000, 700000, 600000, 500000],
+                domestic: [1200000, 650000, 425000, 325000, 275000, 250000],
+                foreign: [1700000, 900000, 850000, 700000, 600000, 650000],
             },
             additionalRequests: [
                 'Contact us if you have requests for meals or places to visit (Madakaripura Waterfall, Pelangi Waterfall, Bromo Hillside Café)',
             ],
         },
         itinerary: [
-            {timeRange: '00.00 – 03.00', activity: 'Drive to Penanjakan/Kingkong Hill/Prahu Hill'},
-            {timeRange: '03.00 – 06.00', activity: 'Explore Bromo Sunrise area'},
-            {timeRange: '06.00 – 06.30', activity: 'Drive to Love Hill and explore'},
-            {timeRange: '06.30 – 07.30', activity: 'Drive to Widodaren Mt and explore'},
-            {timeRange: '07.30 – 10.00', activity: 'Drive to Bromo Mt and explore'},
+            {timeRange: '00.00 – 03.00', activity: 'Drive from your hotel or meeting point to the Penanjakan/Kingkong Hill/Prahu Hill'},
+            {timeRange: '03.00 – 06.00', activity: 'In Penanjakan enjoy and explore the Bromo Sunrise area'},
+            {timeRange: '06.00 – 06.30', activity: 'Continue driving to the Love Hill and explore '},
+            {timeRange: '06.30 – 07.30', activity: 'Continue driving to the Widodaren Mt and explore'},
+            {timeRange: '07.30 – 10.00', activity: 'Continue driving to the Bromo Mt and explore'},
             {
                 timeRange: '10.00 – 12.00',
-                activity: 'Drive to Sand Sea and Savannah (exploring the Sand sea and Savannah)'
+                activity: 'Continue driving to the Sand sea and Savannah (exploring the Sand sea and Savannah)'
             },
-            {timeRange: '12.00 – 14.00', activity: 'Drive back to hotel and end of the tour'},
+            {timeRange: '12.00 – 14.00', activity: 'Continue driving back to your hotel and end of the tour'},
         ],
         requirements: [
             'Wool hat',
@@ -159,12 +170,12 @@ export const TOUR_DATA: TourData[] = [
             ],
             meetingPoint: ['Malang City'],
             price: {
-                domestic: 350000,
-                foreign: 700000,
+                domestic: 400000,
+                foreign: 500000,
             },
         },
         privateTour: {
-            time: 'Every day serving Tumpaksewu Waterfall Trip',
+            time: 'Every day serving Tumpaksewu Tour',
             include: [
                 {name: 'Transport', icon: <FaBus/>},
                 {name: 'Ticket Entrance', icon: <BsFillFileTextFill/>},
@@ -183,8 +194,8 @@ export const TOUR_DATA: TourData[] = [
             ],
             meetingPoint: ['Malang City'],
             price: {
-                domestic: [1200000, 600000, 450000, 400000, 350000, 300000],
-                foreign: [1500000, 750000, 650000, 550000, 450000, 400000],
+                domestic: [1200000, 650000, 425000, 325000, 275000, 250000],
+                foreign: [1700000, 900000, 850000, 700000, 650000, 650000],
             },
             additionalRequests: [
                 'Contact us if you have requests for meals or places to visit.',
@@ -195,7 +206,7 @@ export const TOUR_DATA: TourData[] = [
             {timeRange: '08.00 – 10.00', activity: 'Start driving to the Tumpaksewu Waterfalls'},
             {
                 timeRange: '10.00 – 11.30',
-                activity: 'Have lunch in the traditional resto and prepare (the traditional resto in the waterfalls area)'
+                activity: 'Having a lunch in the traditional resto and prepare (the traditional resto in the waterfalls area)'
             },
             {
                 timeRange: '11.30 - 14.30',
@@ -224,7 +235,7 @@ export const TOUR_DATA: TourData[] = [
     {
         slug: 'ijen-blue-fire-tour',
         image: 'ijen-blue-fire',
-        title: 'Ijen Blue Fire Tour',
+        title: 'Bromo, Ijen Tour drop to Bali',
         description: 'Experience the mesmerizing Ijen Blue Fire with our Ijen Blue Fire Tour. Choose between a Group Tour or a Private Tour for a personalized adventure.',
         groupTour: {
             time: 'Every day serving Ijen Tour',
@@ -265,25 +276,30 @@ export const TOUR_DATA: TourData[] = [
             ],
             meetingPoint: ['Banyuwangi City'],
             price: {
-                domestic: [1400000, 700000, 550000, 400000, 350000, 300000],
-                foreign: [1700000, 900000, 650000, 550000, 450000, 400000],
+                domestic: [3500000, 2500000, 2500000, 2200000, 2200000, 2200000],
+                foreign: [4000000, 3500000, 3500000, 3500000, 3000000, 3000000],
             },
             additionalRequests: [
                 'Contact us if you have requests for meals or places to visit.',
             ],
         },
         itinerary: [
-            {timeRange: '00.00', activity: 'Prepare and pick up in the meeting point/Your hotel'},
-            {timeRange: '00.00 – 02.00', activity: 'Start driving to the Ijen Blue Fire'},
-            {timeRange: '02.00 – 03.30', activity: 'Start trekking until reaching the lake'},
-            {
-                timeRange: '03.30 – 07.30',
-                activity: 'Explore the Ijen Blue Fire and enjoy the trip (Sunrise in the Ijen, Blue Fire, and explore the volcano)'
-            },
-            {
-                timeRange: '07.30 – 09.30',
-                activity: 'Continue driving back to the Hotel in Banyuwangi and end of the tour'
-            },
+            { timeRange: '00.00 – 03.00', activity: 'Drive from your hotel or meeting point to the Penanjakan/Kingkong Hill/Prahu Hill' },
+            { timeRange: '03.00 – 06.00', activity: 'In Penanjakan enjoy and explore the Bromo Sunrise area' },
+            { timeRange: '06.00 – 06.30', activity: 'Continue driving to the Love Hill and explore ' },
+            { timeRange: '06.30 – 07.30', activity: 'Continue driving to the Widodaren Mt and explore' },
+            { timeRange: '07.30 – 10.00', activity: 'Continue driving to the Bromo Mt and explore' },
+            { timeRange: '10.00 – 12.00', activity: 'Continue driving to the Sand sea and Savannah (exploring the Sand sea and Savannah)' },
+            { timeRange: '12.00 – 12.40', activity: 'Continue driving to the meeting point and change the car' },
+            { timeRange: '12.40 – 18.40', activity: 'Continue driving to the Ijen and stay at the hotel' },
+            { timeRange: '18.40 – 01.00', activity: 'Stay and relaxing in the hotel' },
+            { timeRange: '01.00 – 02.00', activity: 'Check out from the hotel and Drive from your hotel to the Ijen' },
+            { timeRange: '02.00 – 04.00', activity: 'Trekking to the Ijen and enjoy the view' },
+            { timeRange: '04.00 – 07.00', activity: 'See the Blue Ijen Fire and the panorama' },
+            { timeRange: '07.00 – 09.00', activity: 'Trekking back to the parking area' },
+            { timeRange: '09.00 – 12.00', activity: 'Continue drive to the Ketapang' },
+            { timeRange: '12.00 – 14.00', activity: 'Change to the ferry and enjoy the panorama to Bali' },
+            { timeRange: '14.00', activity: 'Arrive at Bali and the end of the tour' },
         ],
         requirements: [
             'Sandal/anti-slip shoes',
@@ -300,5 +316,156 @@ export const TOUR_DATA: TourData[] = [
             'Costs for other activities outside the itinerary',
         ],
         paymentMethods: ['Transfer', 'Cash'],
+    },
+    {
+        slug: "3-color-beach-tour",
+        image: "3-color-beach",
+        title: "3 Color Beach Tour",
+        description: "Explore the beauty of 3 Color Beach (Pantai 3 Warna) with our private tour options. Choose from domestic or foreign rates and enjoy a personalized experience.",
+        groupTour: null,
+        privateTour: {
+            time: "Every day serving 3 Color Beach Tour",
+            price: {
+                domestic: [1200000, 600000, 450000, 400000, 350000, 300000],
+                foreign: [1500000, 750000, 650000, 550000, 450000, 400000]
+            },
+            include: [
+                { name: "Transport", icon: <FaBus/> },
+                { name: "Ticket Entrance", icon: <BsFillFileTextFill/> },
+                { name: "Driver", icon: <FaUserAlt/> },
+                { name: "Mineral Water", icon: <FaBottleWater/> },
+                { name: "Guide Local", icon: <FaUserAlt/> },
+                { name: "Lunch", icon: <FaUtensils/> },
+                { name: "Park and Fuel", icon: <FaGasPump/> }
+            ],
+            highlight: [
+                { name: "Using Transport with a maximum of 6 passengers", icon: <BsFillCarFrontFill /> },
+                { name: "3 Color Beach Trip", icon: <GiIsland /> }
+            ],
+            meetingPoint: ["Malang City"],
+            additionalRequests: ["Contact us if you have requests for meals or places to visit."]
+        },
+        itinerary: [
+            { timeRange: "07.00 – 08.00", activity: "Breakfast in the hotel and prepare for the trip" },
+            { timeRange: "08.00 – 10.00", activity: "Start driving to the 3 Color Beach" },
+            { timeRange: "10.00 – 10.30", activity: "Trekking to the 3 Color Beach" },
+            { timeRange: "10.30 - 13.00", activity: "Explore the 3 Color Beach" },
+            { timeRange: "13.00 – 13.30", activity: "Trekking back to the car park" },
+            { timeRange: "13.30 – 13.45", activity: "Continue driving to the Ungapan beach for lunch" },
+            { timeRange: "13.45 – 15.00", activity: "Lunch and explore the Ungapan beach" },
+            { timeRange: "15.00 – 17.30", activity: "Drive back to your hotel in Malang and end of the trip" }
+        ],
+        requirements: [
+            "Second Clothes (because you will get wet in the 3 Color Beach area)",
+            "Sandals/shoes anti-slip",
+            "Snacks",
+            "Plastic bags (for the trash)"
+        ],
+        childrenCategory: "Anak-anak umur dibawah 3 tahun Free",
+        exclude: [
+            "Airplane/Train from and to passenger region",
+            "Airport Tax",
+            "Personal expenses during the tour (laundry, mini bar, etc.)",
+            "Driver / Guide Tipping (Voluntary)"
+        ],
+        paymentMethods: ["Transfer", "Cash (any currency we receive it)"]
+    },
+    {
+        slug: "tea-plantation-tour",
+        image: "tea-plantation",
+        title: "Tea Plantation Tour",
+        description: "Experience the serenity of tea plantations with our private tour options. Choose between domestic and foreign rates and enjoy a personalized journey through the tea fields.",
+        groupTour: null,
+        privateTour: {
+            time: "Every day serving Tea Plantation Tour",
+            price: {
+                domestic: [1000000, 500000, 350000, 250000, 200000, 200000],
+                foreign: [1300000, 650000, 550000, 400000, 300000, 300000]
+            },
+            include: [
+                { name: "Transport", icon: <FaBus/> },
+                { name: "Ticket Entrance", icon: <BsFillFileTextFill/> },
+                { name: "Driver", icon: <FaUserAlt/> },
+                { name: "Mineral Water", icon: <FaBottleWater/> },
+                { name: "Guide Local", icon: <FaUserAlt/> },
+                { name: "Park and Fuel", icon: <FaGasPump/> }
+            ],
+            highlight: [
+                { name: "Using Transport with a maximum of 6 passengers", icon: "<BsFillCarFrontFill />" },
+                { name: "Tea Plantation Trip", icon: <FaLeaf /> },
+                { name: "Tea Factory", icon: <FaIndustry /> }
+            ],
+            meetingPoint: ["Malang City"],
+            additionalRequests: ["Contact us if you have requests for meals or places to visit."]
+        },
+        itinerary: [
+            { timeRange: "08.00 – 09.00", activity: "Breakfast in the hotel and prepare for the trip" },
+            { timeRange: "09.00 – 10.00", activity: "Start driving to the tea plantation" },
+            { timeRange: "10.00 – 10.30", activity: "Visit and explore the tea factory with the local guide" },
+            { timeRange: "10.30 - 11.30", activity: "Explore the tea plantation" },
+            { timeRange: "11.30 – 12.00", activity: "Trekking back to the car park" },
+            { timeRange: "12.00 – 13.00", activity: "Continue driving back to your hotel in Malang and the end of the trip" }
+        ],
+        requirements: [
+            "Sandals/shoes anti-slip"
+        ],
+        childrenCategory: "Anak-anak umur dibawah 3 tahun Free",
+        exclude: [
+            "Airplane/Train from and to passenger region",
+            "Airport Tax",
+            "Personal expenses during the tour (laundry, mini bar, etc.)",
+            "Driver / Guide Tipping (Voluntary)",
+            "Costs for other activities outside the itinerary"
+        ],
+        paymentMethods: ["Transfer", "Cash (any currency we receive it)"]
+    },
+    {
+        slug: "countryside-cycling-tour",
+        image: "countryside-cycling",
+        title: "Cycling in Countryside Tour",
+        description: "Embark on a cycling adventure in the serene countryside with our private tour options. Choose between domestic and foreign rates for an unforgettable cycling experience.",
+        groupTour: null,
+        privateTour: {
+            time: "Every day serving Cycling in the Countryside Tour",
+            price: {
+                domestic: [1000000, 500000, 450000, 400000, 350000, 300000],
+                foreign: [1500000, 750000, 650000, 550000, 450000, 400000]
+            },
+            include: [
+                { name: "Transport", icon: <FaBus/> },
+                { name: "Driver", icon: <FaUserAlt/> },
+                { name: "Mineral Water", icon: <FaBottleWater/> },
+                { name: "Local Guide", icon: <FaUserAlt/> },
+                { name: "Sport Bike", icon: <BsBicycle/> },
+                { name: "Helmet", icon: <GiHelmet/> },
+                { name: "Snacks", icon: <IoFastFoodOutline/> },
+                { name: "Park and Fuel", icon: <FaGasPump/> }
+            ],
+            highlight: [
+                { name: "Using Transport with a maximum of 6 passengers", icon: <BsFillCarFrontFill /> },
+                { name: "Cycling in the Countryside", icon: <GiCycle/> }
+            ],
+            meetingPoint: ["Malang City"],
+            additionalRequests: ["Contact us if you have requests for meals or places to visit."]
+        },
+        itinerary: [
+            { timeRange: "07.00 – 08.00", activity: "Breakfast in the hotel and prepare for the trip" },
+            { timeRange: "08.00 – 09.00", activity: "Start driving to the area for cycling" },
+            { timeRange: "09.00 – 09.10", activity: "Prepare all before cycling (warm-up)" },
+            { timeRange: "09.10 - 13.00", activity: "Explore the countryside with the bicycle (in the middle of the cycling, get the snacks)" },
+            { timeRange: "13.00 – 13.30", activity: "Back to the car and continue driving back to your hotel in Malang and the end of the trip" }
+        ],
+        requirements: [
+            "Sports clothes",
+            "Shoes"
+        ],
+        exclude: [
+            "Airplane/Train from and to passenger region",
+            "Airport Tax",
+            "Personal expenses during the tour (laundry, mini bar, etc.)",
+            "Driver / Guide Tipping (Voluntary)",
+            "Costs for other activities outside the itinerary"
+        ],
+        paymentMethods: ["Transfer", "Cash (any currency we receive it)"]
     }
 ];

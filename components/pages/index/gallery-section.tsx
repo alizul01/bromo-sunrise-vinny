@@ -6,18 +6,13 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const GallerySection: React.FC = () => {
     const images = [
-        "/assets/image/gallery/1.webp",
-        "/assets/image/gallery/2.webp",
-        "/assets/image/gallery/3.webp",
-        "/assets/image/gallery/4.webp",
-        "/assets/image/gallery/5.webp",
-        "/assets/image/gallery/6.webp",
-        "/assets/image/products/bromo/1.webp",
-        "/assets/image/products/bromo/2.webp",
-        "/assets/image/products/ijen-blue-fire/1.webp",
-        "/assets/image/products/ijen-blue-fire/2.webp",
-        "/assets/image/products/tumpaksewu/1.webp",
-        "/assets/image/products/tumpaksewu/2.webp",
+        "/assets/image/products/bromo/1.jpg",
+        "/assets/image/products/bromo/2.jpg",
+        "/assets/image/products/ijen-blue-fire/1.jpg",
+        "/assets/image/products/ijen-blue-fire/2.jpg",
+        "/assets/image/products/tumpaksewu/1.jpg",
+        "/assets/image/products/tumpaksewu/2.jpg",
+        "/assets/image/products/countryside-cycling/1.jpg",
     ];
 
     const [selectedImage, setSelectedImage] = useState<string | null>(null);

@@ -3,7 +3,7 @@ import React from "react";
 import TourCard from "@/components/pages/tour/card";
 import { TOUR_DATA } from "@/data/tour_data";
 import Image from "next/image";
-import hero_image from "@/public/assets/image/products/tumpaksewu/2.webp";
+import hero_image from "@/public/assets/image/products/tumpaksewu/2.jpg";
 import Breadcrumbs from "@/components/partials/breadcrumbs";
 import {ChevronRight} from "lucide-react";
 

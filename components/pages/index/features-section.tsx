@@ -50,7 +50,7 @@ const FeaturesSection: React.FC = () => {
                     </div>
                 </motion.div>
                 <motion.div
-                    className={'flex flex-col sm:flex-row gap-8 items-center justify-start'}
+                    className={'flex flex-col sm:flex-row gap-8 items-center justify-around flex-wrap'}
                     initial="hidden"
                     animate={controls}
                     variants={containerVariants}
@@ -58,7 +58,9 @@ const FeaturesSection: React.FC = () => {
                 >
                     {TOUR_DATA.map((tour, index) => (
                         <CardFeatures key={index} title={tour.title} slug={tour.slug} description={tour.description}
-                                      price={tour.groupTour.price.domestic} image={tour.image}/>
+                                      price={
+                                          tour.groupTour ? (tour.groupTour.price.domestic) : (tour.privateTour.price.domestic[tour.privateTour.price.domestic.length - 1])
+                                      } image={tour.image}/>
                     ))}
                 </motion.div>
             </div>

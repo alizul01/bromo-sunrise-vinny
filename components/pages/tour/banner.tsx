@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import hero_image from "@/public/assets/image/products/bromo/3.webp";
+import hero_image from "@/public/assets/image/products/bromo/3.jpg";
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
 import {HiPhone} from "react-icons/hi";
