@@ -16,7 +16,7 @@ const SERVICE_DATA: ServiceFeature[] = [
     },
     {
         title: "Group and Private Tours",
-        description: "Choose from our group tours or opt for a private tour tailored to your preferences.",
+        description: "Choose from our Sharing Trips or opt for a Private Tour tailored to your preferences.",
         icon: <FaPeopleGroup />
     },
     {

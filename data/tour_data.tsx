@@ -55,6 +55,7 @@ export interface TourData {
     slug: string;
     image: string;
     title: string;
+    isPromo?: boolean;
     description: string;
     groupTour: GroupTour | null;
     privateTour: PrivateTour;
@@ -70,7 +71,8 @@ export const TOUR_DATA: TourData[] = [
         slug: 'bromo-tour',
         image: 'bromo',
         title: 'Bromo Tour',
-        description: 'Explore the breathtaking Bromo Tengger Semeru National Park with our Bromo Tour. We offer both group and private tours to Bromo.',
+        description: 'Explore the breathtaking Bromo Tengger Semeru National Park with our Bromo Tour. We offer both group and Private Tours to Bromo.',
+        isPromo: true,
         groupTour: {
             time: 'Setiap hari',
             include: [
@@ -87,8 +89,8 @@ export const TOUR_DATA: TourData[] = [
             ],
             meetingPoint: ['Malang city'],
             price: {
-                domestic: 350000,
-                foreign: 650000,
+                domestic: 300000,
+                foreign: 450000,
             },
         },
         privateTour: {
@@ -151,7 +153,7 @@ export const TOUR_DATA: TourData[] = [
         slug: 'tumpaksewu-tour',
         image: 'tumpaksewu',
         title: 'Tumpaksewu Tour',
-        description: 'Discover the beauty of Tumpaksewu Waterfalls with our Tumpaksewu Tour. We offer both group and private tours to this mesmerizing destination.',
+        description: 'Discover the beauty of Tumpaksewu Waterfalls with our Tumpaksewu Tour. We offer both group and Private Tours to this mesmerizing destination.',
         groupTour: {
             time: 'Every day serving Tumpaksewu Tour',
             include: [
@@ -170,8 +172,8 @@ export const TOUR_DATA: TourData[] = [
             ],
             meetingPoint: ['Malang City'],
             price: {
-                domestic: 400000,
-                foreign: 500000,
+                domestic: 350000,
+                foreign: 400000,
             },
         },
         privateTour: {
@@ -183,7 +185,7 @@ export const TOUR_DATA: TourData[] = [
                 {name: 'Mineral Water', icon: <FaBottleWater/>},
                 {name: 'Local Guide', icon: <FaUserAlt/>},
                 {name: 'Lunch', icon: <FaUtensils/>},
-                {name: 'Park and Fuel', icon: <FaGasPump/>},
+                {name: 'Park and Fuel (Minimum 2 pax)', icon: <FaGasPump/>},
             ],
             highlight: [
                 { name: 'Using Transport with a maximum of 6 passengers', icon: <BsFillCarFrontFill /> },
@@ -236,7 +238,7 @@ export const TOUR_DATA: TourData[] = [
         slug: 'ijen-blue-fire-tour',
         image: 'ijen-blue-fire',
         title: 'Bromo, Ijen Tour drop to Bali',
-        description: 'Experience the mesmerizing Ijen Blue Fire with our Ijen Blue Fire Tour. Choose between a Group Tour or a Private Tour for a personalized adventure.',
+        description: 'Experience the mesmerizing Ijen Blue Fire with our Ijen Blue Fire Tour. Choose between a Sharing Trip or a Private Tour for a personalized adventure.',
         groupTour: {
             time: 'Every day serving Ijen Tour',
             include: [
@@ -254,7 +256,7 @@ export const TOUR_DATA: TourData[] = [
             meetingPoint: ['Banyuwangi City'],
             price: {
                 domestic: 400000,
-                foreign: 700000,
+                foreign: 1750000,
             },
         },
         privateTour: {
@@ -321,7 +323,7 @@ export const TOUR_DATA: TourData[] = [
         slug: "3-color-beach-tour",
         image: "3-color-beach",
         title: "3 Color Beach Tour",
-        description: "Explore the beauty of 3 Color Beach (Pantai 3 Warna) with our private tour options. Choose from domestic or foreign rates and enjoy a personalized experience.",
+        description: "Explore the beauty of 3 Color Beach (Pantai 3 Warna) with our Private Tour options. Choose from domestic or foreign rates and enjoy a personalized experience.",
         groupTour: null,
         privateTour: {
             time: "Every day serving 3 Color Beach Tour",
@@ -374,7 +376,7 @@ export const TOUR_DATA: TourData[] = [
         slug: "tea-plantation-tour",
         image: "tea-plantation",
         title: "Tea Plantation Tour",
-        description: "Experience the serenity of tea plantations with our private tour options. Choose between domestic and foreign rates and enjoy a personalized journey through the tea fields.",
+        description: "Experience the serenity of tea plantations with our Private Tour options. Choose between domestic and foreign rates and enjoy a personalized journey through the tea fields.",
         groupTour: null,
         privateTour: {
             time: "Every day serving Tea Plantation Tour",
@@ -423,7 +425,7 @@ export const TOUR_DATA: TourData[] = [
         slug: "countryside-cycling-tour",
         image: "countryside-cycling",
         title: "Cycling in Countryside Tour",
-        description: "Embark on a cycling adventure in the serene countryside with our private tour options. Choose between domestic and foreign rates for an unforgettable cycling experience.",
+        description: "Embark on a cycling adventure in the serene countryside with our Private Tour options. Choose between domestic and foreign rates for an unforgettable cycling experience.",
         groupTour: null,
         privateTour: {
             time: "Every day serving Cycling in the Countryside Tour",

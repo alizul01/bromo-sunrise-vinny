@@ -20,7 +20,7 @@ const GroupTour: React.FC<TourTripProps> = ({tour}) => {
                     <span className={'bg-purple-400 p-2 rounded-lg'}>
                        <HiUserGroup className={'text-xl text-white'}/>
                     </span>
-                    <h3 className="text-lg font-bold text-purple-950">Group Tour</h3>
+                    <h3 className="text-lg font-bold text-purple-950">Sharing Trip</h3>
                 </div>
                 <div className="flex flex-col gap-3">
                     {tour.groupTour ? (
@@ -30,10 +30,20 @@ const GroupTour: React.FC<TourTripProps> = ({tour}) => {
                                     <BiMoney className="inline text-xl mr-2"/> Price
                                 </h4>
                                 <div className="mt-3 flex justify-around flex-wrap flex-col gap-1.5 text-base">
+                                    <p className={'font-bold text-purple-600 mb-2'}>Weekday Price</p>
                                     <p className="text-gray-700">Domestic:
                                         Rp{tour.groupTour.price.domestic.toLocaleString()} /person</p>
                                     <p className="text-gray-700">International:
                                         Rp{tour.groupTour.price.foreign.toLocaleString()} /person</p>
+
+                                    {tour.isPromo ? (
+                                        <div>
+                                            <p className={'font-bold text-red-600 mb-2 mt-4'}>Promo Price</p>
+                                            <p className="text-gray-700">Domestic:
+                                                Rp{(tour.groupTour.price.domestic + 100000).toLocaleString()} /person</p>
+                                            <p className="text-gray-700">International: Rp{(tour.groupTour.price.foreign + 100000).toLocaleString()} /person</p>
+                                        </div>
+                                    ) : null }
                                 </div>
                             </div>
                             <div className="border rounded-lg overflow-hidden shadow-md p-6 bg-white">
@@ -71,7 +81,7 @@ const GroupTour: React.FC<TourTripProps> = ({tour}) => {
                         </>
                     ) : (
                         <div className="border rounded-lg overflow-hidden shadow-md p-6 bg-white">
-                            <h4 className="text-lg font-bold mb-3 text-purple-700">Group Tour is not available</h4>
+                            <h4 className="text-lg font-bold mb-3 text-purple-700">Sharing Trip is not available</h4>
                         </div>
                     )}
                 </div>
