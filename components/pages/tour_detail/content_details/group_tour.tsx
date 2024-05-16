@@ -38,7 +38,7 @@ const GroupTour: React.FC<TourTripProps> = ({tour}) => {
 
                                     {tour.isPromo ? (
                                         <div>
-                                            <p className={'font-bold text-red-600 mb-2 mt-4'}>Promo Price</p>
+                                            <p className={'font-bold text-red-600 mb-2 mt-4'}>Weekend Price</p>
                                             <p className="text-gray-700">Domestic:
                                                 Rp{(tour.groupTour.price.domestic + 100000).toLocaleString()} /person</p>
                                             <p className="text-gray-700">International: Rp{(tour.groupTour.price.foreign + 100000).toLocaleString()} /person</p>
