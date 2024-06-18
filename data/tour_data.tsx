@@ -89,8 +89,8 @@ export const TOUR_DATA: TourData[] = [
             ],
             meetingPoint: ['Malang city'],
             price: {
-                domestic: 300000,
-                foreign: 450000,
+                domestic: 350000,
+                foreign: 550000,
             },
         },
         privateTour: {
@@ -158,7 +158,6 @@ export const TOUR_DATA: TourData[] = [
             time: 'Every day serving Tumpaksewu Tour',
             include: [
                 {name: 'Transport', icon: <FaBus/>},
-                {name: 'Ticket Entrance', icon: <BsFillFileTextFill/>},
                 {name: 'Mineral Water', icon: <FaBottleWater/>},
                 {name: 'Driver', icon: <FaUserAlt/>},
                 {name: 'Park and Fuel', icon: <FaGasPump/>},
@@ -167,8 +166,6 @@ export const TOUR_DATA: TourData[] = [
                 { name: 'Using Transport with a maximum of 7 passengers', icon: <BsFillCarFrontFill /> },
                 { name: 'Panorama Tumpaksewu Waterfalls', icon: <FaPanorama /> },
                 { name: 'Tumpaksewu Waterfalls', icon: <GiWaterfall /> },
-                { name: 'Tetes Cave', icon: <GiMountainCave /> },
-                { name: 'Telaga Biru', icon: <LiaSnowflake /> },
             ],
             meetingPoint: ['Malang City'],
             price: {
@@ -255,8 +252,8 @@ export const TOUR_DATA: TourData[] = [
             ],
             meetingPoint: ['Banyuwangi City'],
             price: {
-                domestic: 400000,
-                foreign: 1750000,
+                domestic: 1500000,
+                foreign: 2000000,
             },
         },
         privateTour: {

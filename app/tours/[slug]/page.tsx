@@ -36,6 +36,7 @@ const TourDetail: React.FC = () => {
                         objectFit={'cover'}
                         quality={100}
                         priority={true}
+                        unoptimized={true}
                     />
                     <div
                         className="absolute w-full h-full top-0 left-0 flex flex-col items-center justify-center px-24 bg-purple-950/40">

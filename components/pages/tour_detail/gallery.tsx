@@ -42,6 +42,7 @@ const GalleryTourSection: React.FC<GalleryTourSectionProps> = ({ images }) => {
                                                 width={1080}
                                                 height={1080}
                                                 priority={true}
+                                                unoptimized={true}
                                                 loading={"eager"}
                                                 id={`gallery-image-${index + 1}`}
                                             />
